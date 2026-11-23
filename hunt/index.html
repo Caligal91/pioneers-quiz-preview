@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<base href="https://pioneers-training-quiz.vercel.app/hunt/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sound Detective – Pioneers</title>
+<style>
+@font-face{font-family:Andika;src:url(../fonts/Andika-Regular.ttf)}
+@font-face{font-family:Andika;font-weight:700;src:url(../fonts/Andika-Bold.ttf)}
+:root{--o:#f47817;--t:#68ccd1;--ink:#222230;--ok:#3a9d3a;--v:#e8231f}
+*{box-sizing:border-box}
+body{margin:0;font-family:Andika,"Segoe UI",sans-serif;color:var(--ink);background:#fff8f0;text-align:center}
+.wrap{max-width:980px;margin:0 auto;padding:10px 12px}
+.tabs{display:flex;gap:10px;justify-content:center;margin:4px 0 10px}
+.tabs button{font:inherit;font-weight:700;font-size:min(19px,4vw);border:3px solid var(--ink);background:#fff;border-radius:999px;padding:7px 16px;cursor:pointer}
+.tabs button.on{background:var(--o);border-color:var(--o);color:#fff}
+.panel{display:none}.panel.on{display:block}
+h1{margin:2px 0 4px;font-size:min(28px,5.6vw)}
+.sub{margin:0 0 8px;color:#555;font-size:min(18px,4vw)}
+.stars{font-size:min(30px,6vw);letter-spacing:4px;margin:4px 0 10px;min-height:38px}
+.stars span{opacity:.18;transition:all .3s;display:inline-block}.stars span.on{opacity:1;transform:scale(1.25)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.card{position:relative;background:#fff;border:4px solid #e2e2ea;border-radius:22px;padding:10px 6px 8px;cursor:pointer;font:inherit;transition:transform .15s,border-color .2s;box-shadow:0 4px 0 rgba(0,0,0,.08)}
+.card:hover{transform:translateY(-3px)}
+.card img{width:74px;height:74px;display:block;margin:0 auto 4px}
+.card .w{font-size:22px;font-weight:700;min-height:28px}
+.card .w b{color:var(--v)}
+.card .hint{font-size:13px;color:#777;min-height:16px}
+.card.yes{border-color:var(--ok);background:#effaef}
+.card.no{border-color:#e0457b;background:#fff3f7}
+.card.shake{animation:sh .45s}
+@keyframes sh{20%{transform:translateX(-8px) rotate(-3deg)}60%{transform:translateX(8px) rotate(3deg)}}
+.card.pop{animation:pp .45s cubic-bezier(.3,1.7,.5,1)}
+@keyframes pp{0%{transform:scale(.85)}100%{transform:scale(1)}}
+.badge{position:absolute;top:-10px;right:-8px;font-size:28px}
+.msg{font-size:min(24px,5vw);font-weight:700;min-height:34px;margin:12px 0 6px}
+.btn{font:inherit;font-weight:700;font-size:19px;border:0;border-radius:999px;padding:10px 22px;cursor:pointer;color:#fff;background:var(--o);box-shadow:0 4px 0 #c85d0b;margin:6px}
+.btn.alt{background:var(--t);box-shadow:0 4px 0 #3fa3a8}
+.add{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:6px 0 14px}
+.add input{font:inherit;font-size:22px;padding:8px 14px;border:3px solid #ccd;border-radius:16px;width:min(360px,70vw)}
+.wall{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;min-height:120px;padding:6px}
+.note{font-size:30px;font-weight:700;padding:16px 22px;border-radius:6px;box-shadow:0 6px 12px rgba(0,0,0,.12);transform:rotate(var(--r));animation:pp .4s cubic-bezier(.3,1.7,.5,1);position:relative}
+.note b{color:var(--v)}
+.note .x{position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;border:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer;font-size:13px;line-height:24px;padding:0}
+.tip{font-size:14px;color:#777;margin-top:10px}
+.conf{position:fixed;top:-20px;font-size:28px;pointer-events:none;animation:fall linear forwards;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tabs"><button id="t1" class="on">🔍 Sound Detective</button><button id="t2">✏️ Our Word Wall</button></div>
+  <div class="panel on" id="p1">
+    <h1 id="title">Find the pictures with the short a sound!</h1>
+    <p class="sub">Tap a picture to hear it. Does it have the <b id="snd">short a</b> sound?</p>
+    <div class="stars" id="stars"></div>
+    <div class="grid" id="grid"></div>
+    <div class="msg" id="msg"></div>
+    <button class="btn alt" id="again">🔄 New pictures</button>
+  </div>
+  <div class="panel" id="p2">
+    <h1 id="title2">Can you think of words with the short a sound?</h1>
+    <p class="sub">Say a word, then add it to the wall!</p>
+    <div class="add"><input id="inp" placeholder="Type a word…" autocomplete="off" spellcheck="false"><button class="btn" id="addb">➕ Add</button></div>
+    <div class="wall" id="wall"></div>
+    <p class="tip">Tutor: type the words your student comes up with. If a word doesn't have the sound, praise the try and stretch it out together.</p>
+  </div>
+</div>
+<script>
+const P=new URLSearchParams(location.search);const LID=P.get('l')||('short-'+(P.get('s')||'a').toLowerCase());
+const CH='https://caligal91.github.io/pioneers-sound-chart/';
+let SET,S,IMG,VOI;const NEED=6;
+let IMAP={};fetch('../games/img/map.json').then(r=>r.json()).catch(()=>({})).then(m=>{IMAP=m;return fetch('../lessons/'+LID+'.json',{cache:'no-store'})}).then(r=>r.json()).then(J=>{S=J.letter;SPLIT=!!J.split;HLJ=J;SET={name:J.sound,yes:J.hunt.yes,no:J.hunt.no};
+ const chart=J.hunt.img==='chart';IMG=w=>chart?`${CH}img/${w}.png`:`../games/img/${IMAP[w]||w+'.svg'}`;VOI=w=>chart?`${CH}voice/w-${w}.mp3`:`../games/audio/w/${w}.mp3`;init()});
+const $=id=>document.getElementById(id);
+function init(){$('title').textContent=`Find the pictures with the ${SET.name} sound!`;$('snd').textContent=SET.name;$('title2').textContent=`Can you think of words with the ${SET.name} sound?`;
+$('t1').onclick=()=>tab(1);$('t2').onclick=()=>tab(2);$('again').onclick=round;round()}
+function tab(n){[1,2].forEach(i=>{$('t'+i).classList.toggle('on',i===n);$('p'+i).classList.toggle('on',i===n)})}
+let cur=null;function play(src){if(cur)cur.pause();cur=new Audio(src);cur.play().catch(()=>{})}
+let ac;function beep(f,d,type='triangle',v=.12){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(e){}}
+function confetti(){const em=['🎉','⭐','🎊','✨','🌟'];for(let k=0;k<40;k++){const s=document.createElement('div');s.className='conf';s.textContent=em[k%em.length];s.style.left=Math.random()*100+'vw';s.style.animationDuration=(1.6+Math.random()*1.6)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),3600)}}
+const shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+let SPLIT=false,HLJ={};const gre=()=>HLJ.graphemes?new RegExp('('+HLJ.graphemes.slice().sort((a,b)=>b.length-a.length).join('|')+')','g'):null;const hl=w=>{if(gre())return w.replace(gre(),m=>'<b>'+m+'</b>');const i=w.indexOf(S);if(i<0)return w;if(SPLIT&&new RegExp(S+'[^aeiou]e$').test(w))return w.slice(0,i)+'<b>'+w[i]+'</b>'+w.slice(i+1,-1)+'<b>e</b>';return w.slice(0,i)+'<b>'+w[i]+'</b>'+w.slice(i+1)};
+let found=0;
+function round(){found=0;$('msg').textContent='';$('stars').innerHTML=Array.from({length:NEED},()=>'<span>⭐</span>').join('');
+ const yes=shuf(SET.yes).slice(0,NEED),no=shuf(Object.keys(SET.no)).slice(0,NEED);
+ const G=$('grid');G.innerHTML='';
+ shuf([...yes.map(w=>[w,1]),...no.map(w=>[w,0])]).forEach(([w,ok])=>{const c=document.createElement('button');c.className='card';
+  c.innerHTML=`<img src="${IMG(w)}" alt=""><div class="w"></div><div class="hint"></div>`;
+  c.onclick=()=>{play(VOI(w));if(c.classList.contains('yes')||c.classList.contains('no'))return;
+   setTimeout(()=>{if(ok){c.classList.add('yes','pop');c.querySelector('.w').innerHTML=hl(w);c.insertAdjacentHTML('beforeend','<span class="badge">⭐</span>');found++;
+     [...$('stars').children].forEach((s,k)=>s.classList.toggle('on',k<found));[660,880].forEach((f,k)=>setTimeout(()=>beep(f,.15),k*90));
+     $('msg').textContent=found<NEED?`Yes! ${w} has the ${SET.name} sound! 🎉`:`You found them all! Super sound detective! 🕵️`;if(found===NEED)confetti()}
+    else{c.classList.add('no','shake');c.querySelector('.w').textContent=w;c.querySelector('.hint').textContent=SET.no[w];beep(220,.2,'sawtooth',.06);
+     $('msg').textContent=`Good listening! ${w} has the ${SET.no[w].split(':')[0]} sound. Keep looking! 👂`}},700)};
+  G.appendChild(c)})}
+const COLS=['#fff3a8','#ffd6e7','#d6f2f3','#e6dcff','#dff7d6','#ffe1c4'];let nn=0;
+function addWord(){const w=$('inp').value.trim().toLowerCase();if(!w)return;$('inp').value='';$('inp').focus();
+ const n=document.createElement('div');n.className='note';n.style.background=COLS[nn++%COLS.length];n.style.setProperty('--r',((Math.random()-.5)*8)+'deg');
+ n.innerHTML=(gre()?w.replace(/[<>&]/g,'').replace(gre(),m=>'<b>'+m+'</b>'):[...w].map((c,k)=>(c===S||(SPLIT&&new RegExp(S+'[^aeiou]e$').test(w)&&k===w.length-1&&c==='e'))?'<b>'+c+'</b>':c.replace(/[<>&]/g,'')).join(''))+'<button class="x" title="Remove">✕</button>';
+ n.querySelector('.x').onclick=()=>n.remove();$('wall').appendChild(n);beep(700,.12)}
+$('addb').onclick=addWord;$('inp').addEventListener('keydown',e=>{if(e.key==='Enter')addWord()});
+</script>
+</body>
+</html>
