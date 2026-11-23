@@ -73,7 +73,7 @@ const P=new URLSearchParams(location.search);const LID=P.get('l')||('short-'+(P.
 const CH='https://caligal91.github.io/pioneers-sound-chart/';
 let SET,S,IMG,VOI;const NEED=6;
 let IMAP={};fetch('../games/img/map.json').then(r=>r.json()).catch(()=>({})).then(m=>{IMAP=m;return fetch('../lessons/'+LID+'.json',{cache:'no-store'})}).then(r=>r.json()).then(J=>{S=J.letter;SPLIT=!!J.split;HLJ=J;SET={name:J.sound,yes:J.hunt.yes,no:J.hunt.no};
- const chart=J.hunt.img==='chart';IMG=w=>chart?`${CH}img/${w}.png`:`../games/img/${IMAP[w]||w+'.svg'}`;VOI=w=>chart?`${CH}voice/w-${w}.mp3`:`../games/audio/w/${w}.mp3`;init()});
+ const chart=J.hunt.img==='chart';const NEWPICS=(LID==='short-e')?new Set(['bed','egg','hen','net','web','tent','bell','nest','pen','jet','cat','pig','dog','sun','bee','tree','fish','duck','hat','box']):null;IMG=w=>(NEWPICS&&NEWPICS.has(w))?new URL('img/'+w+'.png',location.href).href:chart?`${CH}img/${w}.png`:`../games/img/${IMAP[w]||w+'.svg'}`;VOI=w=>chart?`${CH}voice/w-${w}.mp3`:`../games/audio/w/${w}.mp3`;init()});
 const $=id=>document.getElementById(id);
 function init(){$('title').textContent=`Find the pictures with the ${SET.name} sound!`;$('snd').textContent=SET.name;$('title2').textContent=`Can you think of words with the ${SET.name} sound?`;
 $('t1').onclick=()=>tab(1);$('t2').onclick=()=>tab(2);$('again').onclick=round;round()}
