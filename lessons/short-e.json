@@ -1,0 +1,325 @@
+{
+ "sound": "short e",
+ "letter": "e",
+ "words": [
+  "bed",
+  "jet",
+  "ten",
+  "peg",
+  "red",
+  "pen"
+ ],
+ "sentences": [
+  "I jumped into my bed and read a book.",
+  "The big jet flew over our house.",
+  "I have ten fingers and ten toes.",
+  "Mum used a peg to hang my shirt on the line.",
+  "A stop sign is red.",
+  "Can I use your pen to write my name?"
+ ],
+ "example": "bed",
+ "hunt": {
+  "yes": [
+   "bed",
+   "egg",
+   "hen",
+   "net",
+   "web",
+   "tent",
+   "bell",
+   "nest",
+   "pen",
+   "jet"
+  ],
+  "no": {
+   "cat": "short a",
+   "pig": "short i",
+   "dog": "short o",
+   "sun": "short u",
+   "bee": "long e: it says its name!",
+   "tree": "long e: it says its name!",
+   "fish": "short i",
+   "duck": "short u",
+   "hat": "short a",
+   "box": "short o"
+  }
+ },
+ "homehunt": [
+  "bed",
+  "pen",
+  "egg",
+  "hen",
+  "bell"
+ ],
+ "learnt": [
+  "the short e sound",
+  "e says /e/ like in egg",
+  "bed, jet, ten, peg, red, pen",
+  "short a or short e?"
+ ],
+ "contrast": {
+  "a": "a",
+  "b": "e",
+  "amouth": "big open mouth, like at the dentist",
+  "bmouth": "smaller mouth and a little smile",
+  "pairs": [
+   [
+    "pan",
+    "pen"
+   ],
+   [
+    "bad",
+    "bed"
+   ],
+   [
+    "tan",
+    "ten"
+   ],
+   [
+    "pat",
+    "pet"
+   ],
+   [
+    "bag",
+    "beg"
+   ]
+  ],
+  "listen": [
+   "bed",
+   "bad",
+   "pen",
+   "pan",
+   "pet",
+   "pat",
+   "men",
+   "man",
+   "beg",
+   "bag"
+  ],
+  "read": [
+   [
+    "sat",
+    "set"
+   ],
+   [
+    "mat",
+    "met"
+   ],
+   [
+    "pack",
+    "peck"
+   ],
+   [
+    "than",
+    "then"
+   ],
+   [
+    "sand",
+    "send"
+   ]
+  ]
+ },
+ "books": [
+  [
+   "A",
+   "ben-and-the-red-hen",
+   "Ben and the Red Hen",
+   "Emerging"
+  ],
+  [
+   "B",
+   "meg-and-the-wet-pet",
+   "Meg and the Wet Pet",
+   "Emerging"
+  ],
+  [
+   "C",
+   "jess-and-the-best-tent",
+   "Jess and the Best Tent",
+   "Consolidating"
+  ],
+  [
+   "D",
+   "fred-and-the-sand-sled",
+   "Fred and the Sand Sled",
+   "Consolidating"
+  ],
+  [
+   "E",
+   "jemma-and-the-lost-helmet",
+   "Jemma and the Lost Helmet",
+   "Extending"
+  ],
+  [
+   "F",
+   "seb-and-the-seven-shells",
+   "Seb and the Seven Shells",
+   "Extending"
+  ]
+ ],
+ "id": "short-e",
+ "prev": "short-a",
+ "next": "short-i",
+ "nextStory": "Ben and the Red Hen",
+ "icebreaker": {
+  "chain": {
+   "title": "I'm going on an adventure…",
+   "stem": "I'm going on an adventure and I'm taking",
+   "tip": "Tutor starts: \"I'm going on an adventure and I'm taking a net.\" Tap the picture, then the child repeats the whole list and adds one more. Use 🙈 Hide the list to make it a real memory challenge, and 👀 to check. Keep it light and let the child win the last round!",
+   "items": [
+    {
+     "w": "net",
+     "say": "a net"
+    },
+    {
+     "w": "tent",
+     "say": "a tent"
+    },
+    {
+     "w": "pen",
+     "say": "a pen"
+    },
+    {
+     "w": "jet",
+     "say": "a jet"
+    },
+    {
+     "w": "egg",
+     "say": "an egg"
+    },
+    {
+     "w": "hen",
+     "say": "a hen"
+    },
+    {
+     "w": "nest",
+     "say": "a nest"
+    },
+    {
+     "w": "bell",
+     "say": "a bell"
+    }
+   ]
+  },
+  "wheel": [
+   [
+    [
+     "🥚",
+     "How do you like to eat eggs?"
+    ],
+    [
+     "🥚",
+     "Can you make up a silly sentence about it with the word “egg”?"
+    ],
+    [
+     "🥚",
+     "Tell me three words that describe it!"
+    ]
+   ],
+   [
+    [
+     "⛺",
+     "Would you like to sleep in a tent? Why or why not?"
+    ],
+    [
+     "⛺",
+     "Can you make up a silly sentence about it with the word “tent”?"
+    ],
+    [
+     "⛺",
+     "Tell me three words that describe it!"
+    ]
+   ],
+   [
+    [
+     "🛏️",
+     "What is your favourite thing to do in your bed?"
+    ],
+    [
+     "🛏️",
+     "Can you make up a silly sentence about it with the word “bed”?"
+    ],
+    [
+     "🛏️",
+     "Tell me three words that describe it!"
+    ]
+   ],
+   [
+    [
+     "🐔",
+     "If you had a pet hen, what would you name her?"
+    ],
+    [
+     "🐔",
+     "Can you make up a silly sentence about it with the word “hen”?"
+    ],
+    [
+     "🐔",
+     "Tell me three words that describe it!"
+    ]
+   ],
+   [
+    [
+     "✈️",
+     "Where would you fly to in a jet?"
+    ],
+    [
+     "✈️",
+     "Can you make up a silly sentence about it with the word “jet”?"
+    ],
+    [
+     "✈️",
+     "Tell me three words that describe it!"
+    ]
+   ],
+   [
+    [
+     "🖊️",
+     "What would you write or draw with a red pen?"
+    ],
+    [
+     "🖊️",
+     "Can you make up a silly sentence about it with the word “pen”?"
+    ],
+    [
+     "🖊️",
+     "Tell me three words that describe it!"
+    ]
+   ],
+   [
+    [
+     "🔔",
+     "Where have you heard a bell ring?"
+    ],
+    [
+     "🔔",
+     "Can you make up a silly sentence about it with the word “bell”?"
+    ],
+    [
+     "🔔",
+     "Tell me three words that describe it!"
+    ]
+   ],
+   [
+    [
+     "🥅",
+     "What would you catch in a net?"
+    ],
+    [
+     "🥅",
+     "Can you make up a silly sentence about it with the word “net”?"
+    ],
+    [
+     "🥅",
+     "Tell me three words that describe it!"
+    ]
+   ]
+  ],
+  "truths": [
+   "I have a red bed.",
+   "I once flew a jet to school!",
+   "I like to eat eggs for breakfast."
+  ],
+  "lie": 1
+ }
+}
