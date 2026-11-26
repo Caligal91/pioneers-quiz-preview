@@ -1,0 +1,52 @@
+{
+ "title": "The Vowel Song",
+ "src": "media/vowel-song.mp4",
+ "poster": "media/vowel-song.jpg",
+ "hotspots": [],
+ "chapters": [
+  {
+   "title": "Intro",
+   "t": 0
+  },
+  {
+   "title": "What is a vowel?",
+   "t": 8.64
+  },
+  {
+   "title": "Chorus",
+   "t": 28.06
+  },
+  {
+   "title": "Short and long",
+   "t": 43.52
+  },
+  {
+   "title": "a: apple, cake",
+   "t": 56.37
+  },
+  {
+   "title": "e: egg, emu",
+   "t": 69.22
+  },
+  {
+   "title": "i: insect, kite",
+   "t": 86.2
+  },
+  {
+   "title": "Chorus",
+   "t": 94.4
+  },
+  {
+   "title": "o: octopus, boat",
+   "t": 109.86
+  },
+  {
+   "title": "u: umbrella, ute",
+   "t": 124.34
+  },
+  {
+   "title": "Last chorus",
+   "t": 138.3
+  }
+ ]
+}

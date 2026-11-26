@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pioneers Training Video</title>
+<style>
+  :root { --orange:#f47817; --teal:#68ccd1; --ink:#222230; --bg:#faf9f9; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); }
+  .wrap { max-width:1100px; margin:0 auto; padding:12px; }
+  .stage { position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:14px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,.12); }
+  video { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .hot { position:absolute; border-radius:999px; cursor:pointer; background:transparent; border:0; padding:0; transition:background .15s, box-shadow .15s; }
+  .hot:hover, .hot:focus-visible { background:rgba(255,255,255,.18); box-shadow:0 0 0 3px rgba(104,204,209,.9); outline:none; }
+  .hint { font-size:13px; color:#6b6b6b; margin:8px 2px 4px; }
+  .chapters { display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 4px; }
+  .chapters button { border:2px solid #e6e6ea; background:#fff; color:var(--ink); border-radius:999px; padding:8px 14px; font-size:14px; font-weight:600; cursor:pointer; }
+  .chapters button:hover { border-color:var(--teal); }
+  .chapters button.on { background:var(--orange); border-color:var(--orange); color:#fff; }
+  .chapters .t { font-weight:400; opacity:.75; margin-left:6px; font-size:12px; }
+  .bigplay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.25); cursor:pointer; border:0; }
+  .bigplay span { background:var(--orange); color:#fff; font-weight:700; font-size:20px; padding:14px 26px; border-radius:999px; box-shadow:0 4px 14px rgba(0,0,0,.25); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="stage" id="stage">
+    <video id="v" controls playsinline preload="metadata"></video>
+    <button class="bigplay" id="bigplay" aria-label="Play video"><span>▶ Play (sound on)</span></button>
+  </div>
+  <p class="hint">💡 Tip: click any building block along the top of the video, or a chapter below, to jump straight to it.</p>
+  <div class="chapters" id="chapters"></div>
+</div>
+<script>
+const id = (new URLSearchParams(location.search).get("v") || "").replace(/[^a-z0-9-]/g, "");
+const V = document.getElementById("v"), stage = document.getElementById("stage"), list = document.getElementById("chapters");
+const fmt = t => Math.floor(t / 60) + ":" + String(Math.floor(t % 60)).padStart(2, "0");
+function go(t) { V.currentTime = t + 0.05; V.play(); document.getElementById("bigplay").style.display = "none"; }
+fetch(id + ".json", {cache: "no-store"}).then(r => r.json()).then(cfg => {
+  document.title = cfg.title + " – Pioneers Training";
+  V.src = cfg.src; if (cfg.poster) V.poster = cfg.poster;
+  if (!(cfg.hotspots || []).length) document.querySelector(".hint").textContent = "💡 Tip: click a chapter below to jump straight to it.";
+  (cfg.hotspots || []).forEach(h => {
+    const b = document.createElement("button"); b.className = "hot"; b.title = "Jump to " + h.title; b.setAttribute("aria-label", "Jump to " + h.title);
+    b.style.left = (h.x / 1920 * 100) + "%"; b.style.top = (h.y / 1080 * 100) + "%";
+    b.style.width = (h.w / 1920 * 100) + "%"; b.style.height = (h.h / 1080 * 100) + "%";
+    b.onclick = e => { e.stopPropagation(); go(h.t); };
+    stage.appendChild(b);
+  });
+  const btns = cfg.chapters.map(c => {
+    const b = document.createElement("button"); b.innerHTML = c.title + '<span class="t">' + fmt(c.t) + "</span>";
+    b.onclick = () => go(c.t); list.appendChild(b); return [c.t, b];
+  });
+  V.addEventListener("timeupdate", () => {
+    let cur = null; btns.forEach(([t, b]) => { if (V.currentTime + 0.1 >= t) cur = b; });
+    btns.forEach(([, b]) => b.classList.toggle("on", b === cur));
+  });
+});
+document.getElementById("bigplay").onclick = () => { V.muted = false; V.play(); document.getElementById("bigplay").style.display = "none"; };
+V.addEventListener("play", () => document.getElementById("bigplay").style.display = "none");
+</script>
+</body>
+</html>
