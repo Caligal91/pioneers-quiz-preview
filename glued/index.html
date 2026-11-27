@@ -39,9 +39,9 @@ body{margin:0;font-family:Andika,"Segoe UI",sans-serif;color:var(--ink);backgrou
 .gb{position:absolute;left:50%;top:0;width:min(200px,28vw);transform:translate(-57%,-92%) rotate(-8deg) scale(.4);transform-origin:50% 100%;opacity:0;z-index:3;pointer-events:none;transition:all .6s cubic-bezier(.3,1.5,.5,1)}
 .pair.squirt .gb{opacity:1;transform:translate(-57%,-92%) rotate(0) scale(1)}
 .pair.glued .gb{opacity:0;transform:translate(-57%,-120%) rotate(8deg) scale(.7);transition:all .7s ease .25s}
-.gl{position:absolute;left:50%;bottom:-48%;width:min(150px,21vw);transform:translate(-50%,0) scale(.1);opacity:0;z-index:2;pointer-events:none;transition:all .8s cubic-bezier(.3,1.5,.5,1)}
-.pair.squirt .gl{opacity:1;transform:translate(-50%,0) scale(.55)}
-.pair.glued .gl{opacity:1;transform:translate(-50%,0) scale(1);transition:all .6s cubic-bezier(.3,1.6,.5,1)}
+.gl{position:absolute;left:50%;top:-3%;height:106%;width:auto;transform:translate(-50%,0) scale(.1,.4);transform-origin:50% 0;opacity:0;z-index:2;pointer-events:none;transition:all .8s cubic-bezier(.3,1.5,.5,1)}
+.pair.squirt .gl{opacity:1;transform:translate(-50%,0) scale(.7,.7)}
+.pair.glued .gl{opacity:1;transform:translate(-50%,0) scale(1,1);transition:all .6s cubic-bezier(.3,1.6,.5,1)}
 .ex{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;opacity:0;transition:opacity .5s}
 .ex.show{opacity:1}
 .ex div{background:#fff;border-radius:16px;padding:4px 10px 6px;font-size:min(26px,4.6vw);font-weight:700;box-shadow:0 3px 8px rgba(0,0,0,.08)}
@@ -94,8 +94,8 @@ h2{margin:8px 0 6px;font-size:min(26px,5.4vw)}
       <div class="mon" id="mon"><img src="a-small.png" alt="little a"></div>
       <div class="zone">
         <div class="row">
-          <div class="pair" id="pm"><div class="t v">a</div><div class="t">m</div><img class="gl" src="img/glue-blob.png" alt=""><img class="gb" src="img/glue-bottle.png" alt=""></div>
-          <div class="pair" id="pn"><div class="t v">a</div><div class="t">n</div><img class="gl" src="img/glue-blob.png" alt=""><img class="gb" src="img/glue-bottle.png" alt=""></div>
+          <div class="pair" id="pm"><div class="t v">a</div><div class="t">m</div><img class="gl" src="img/glue-bead.png" alt=""><img class="gb" src="img/glue-bottle.png" alt=""></div>
+          <div class="pair" id="pn"><div class="t v">a</div><div class="t">n</div><img class="gl" src="img/glue-bead.png" alt=""><img class="gb" src="img/glue-bottle.png" alt=""></div>
         </div>
         <div class="ex" id="ex"></div>
       </div>
@@ -115,8 +115,8 @@ h2{margin:8px 0 6px;font-size:min(26px,5.4vw)}
   <div class="panel" id="p2">
     <h2>1. Tap the glue to stick the sounds together!</h2>
     <div class="glue-row">
-      <div class="gwrap"><div class="pair show" id="gm"><div class="t v">a</div><div class="t">m</div><img class="gl" src="img/glue-blob.png" alt=""></div><button class="pot" data-g="am"><img src="img/glue-bottle.png" alt="">Glue!</button></div>
-      <div class="gwrap"><div class="pair show" id="gn"><div class="t v">a</div><div class="t">n</div><img class="gl" src="img/glue-blob.png" alt=""></div><button class="pot" data-g="an"><img src="img/glue-bottle.png" alt="">Glue!</button></div>
+      <div class="gwrap"><div class="pair show" id="gm"><div class="t v">a</div><div class="t">m</div><img class="gl" src="img/glue-bead.png" alt=""></div><button class="pot" data-g="am"><img src="img/glue-bottle.png" alt="">Glue!</button></div>
+      <div class="gwrap"><div class="pair show" id="gn"><div class="t v">a</div><div class="t">n</div><img class="gl" src="img/glue-bead.png" alt=""></div><button class="pot" data-g="an"><img src="img/glue-bottle.png" alt="">Glue!</button></div>
     </div>
     <h2>2. Which glued sound finishes the word?</h2>
     <div class="stars" id="stars"></div>
