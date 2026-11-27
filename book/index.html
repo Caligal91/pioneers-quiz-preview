@@ -18,7 +18,7 @@ body{margin:0;font-family:Andika,"Segoe UI",sans-serif;color:var(--ink);backgrou
 .pg.on{display:flex;animation:in .35s ease}
 @keyframes in{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
 .aa{font-size:min(44px,8vw);font-weight:700;letter-spacing:.3em;position:absolute;top:12px;left:0;right:0;pointer-events:none}
-u{text-decoration:none;color:var(--v);border-bottom:.09em solid var(--v)}
+u{text-decoration:underline;text-decoration-color:var(--v);text-decoration-thickness:.07em;text-underline-offset:.1em;text-decoration-skip-ink:none;color:var(--v)}
 /* cover */
 .brand{font-weight:700;font-size:min(26px,5.5vw);color:#fff;background:var(--o);border-radius:999px;padding:4px 22px;letter-spacing:.04em}
 .cover h1{margin:10px 0 6px;font-size:min(38px,8vw)}
@@ -32,10 +32,10 @@ u{text-decoration:none;color:var(--v);border-bottom:.09em solid var(--v)}
 .pic.say{animation:pop .6s ease}
 @keyframes pop{0%{transform:scale(1)}30%{transform:scale(1.14) rotate(-3deg)}60%{transform:scale(1.06) rotate(2deg)}100%{transform:scale(1)}}
 .big-pic{width:min(240px,46vw);height:min(240px,46vw);margin-top:0}
-.word{font-size:min(50px,10vw);line-height:1.25;margin-top:4px;font-weight:700}
+.word{font-size:min(50px,10vw);line-height:1.4;margin-top:6px;font-weight:700}
 .word span{display:block}
-.hint{font-size:min(16px,3.6vw);color:#777;margin-top:2px}
-.sent{font-size:min(46px,9vw);font-weight:700;margin-top:8px;cursor:pointer;padding:2px 14px;border-radius:14px}
+.hint{font-size:min(16px,3.6vw);color:#777;margin-top:14px;position:relative;z-index:1}
+.sent{font-size:min(46px,9vw);line-height:1.4;font-weight:700;margin-top:10px;cursor:pointer;padding:2px 14px;border-radius:14px}
 .sent:active{background:#fff1e0}
 .sent.say{background:#fff1e0}
 /* four picture page */
