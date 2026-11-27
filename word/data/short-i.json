@@ -1,0 +1,99 @@
+{
+ "target": {
+  "letter": "i",
+  "name": "short i",
+  "sound": "../vowels/g-short-i.mp3"
+ },
+ "words": [
+  {
+   "word": "six",
+   "segs": [
+    "s",
+    "i",
+    "x"
+   ],
+   "def": "Six is a number. It comes after five. A bug has six legs!",
+   "ask": [
+    "How old will you be when you are six?"
+   ],
+   "sentence": "My little sister is six years old.",
+   "hasWriteImg": true,
+   "adultDef": "Six is a number. It comes after five and before seven: 1, 2, 3, 4, 5, 6 . An insect has six legs! In cricket, when the ball goes over the fence without bouncing, that is a \"six\"."
+  },
+  {
+   "word": "hit",
+   "segs": [
+    "h",
+    "i",
+    "t"
+   ],
+   "def": "To hit is to touch something hard and fast, like when you hit a ball with a bat.",
+   "ask": [
+    "What can you hit with a bat?"
+   ],
+   "sentence": "Sam hit the ball over the fence for six!",
+   "hasWriteImg": true,
+   "adultDef": "To hit something is to touch it hard and fast, like when you hit a ball with a cricket bat or a tennis racket. We hit a drum to make music. (We never hit people!)"
+  },
+  {
+   "word": "lid",
+   "segs": [
+    "l",
+    "i",
+    "d"
+   ],
+   "def": "A lid is the top that covers a jar, a box or a pot.",
+   "ask": [
+    "What things have a lid?"
+   ],
+   "sentence": "Put the lid back on the jar.",
+   "hasWriteImg": true,
+   "adultDef": "A lid is the top that covers a box, a jar, a pot or a bin. We take the lid off to get things out, and put it back on to keep food fresh and stop things spilling."
+  },
+  {
+   "word": "pig",
+   "segs": [
+    "p",
+    "i",
+    "g"
+   ],
+   "def": "A pig is a pink farm animal with a curly tail. Pigs say oink, oink!",
+   "ask": [
+    "What noise does a pig make?"
+   ],
+   "sentence": "The pig rolled in the mud.",
+   "hasWriteImg": true,
+   "adultDef": "A pig is a farm animal with pink or spotty skin, a curly tail and a flat nose called a snout. Pigs say 'oink, oink' and love to roll in the mud to keep cool. A baby pig is called a piglet."
+  },
+  {
+   "word": "tip",
+   "segs": [
+    "t",
+    "i",
+    "p"
+   ],
+   "def": "The tip is the pointy end of something, like the tip of your nose.",
+   "ask": [
+    "Can you touch the tip of your nose?"
+   ],
+   "sentence": "The tip of my pencil is sharp.",
+   "hasWriteImg": true,
+   "adultDef": "The tip is the pointy end of something \u2013 like the tip of your pencil, the tip of your finger or the tip of your nose. When the tip of your pencil breaks, we sharpen it!"
+  },
+  {
+   "word": "bin",
+   "segs": [
+    "b",
+    "i",
+    "n"
+   ],
+   "def": "A bin is where we put our rubbish.",
+   "ask": [
+    "What goes in the recycling bin?"
+   ],
+   "sentence": "Put your rubbish in the bin.",
+   "hasWriteImg": true,
+   "adultDef": "A bin is a big box or tub where we put rubbish. At home we might have a red bin for rubbish, a yellow bin for recycling and a green bin for grass and leaves. On bin night we wheel the bins out to the street!"
+  }
+ ]
+}

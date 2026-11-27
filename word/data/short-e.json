@@ -1,0 +1,99 @@
+{
+ "target": {
+  "letter": "e",
+  "name": "short e",
+  "sound": "../vowels/g-short-e.mp3"
+ },
+ "words": [
+  {
+   "word": "bed",
+   "segs": [
+    "b",
+    "e",
+    "d"
+   ],
+   "def": "A bed is the soft, cosy place where you sleep at night.",
+   "ask": [
+    "What do you like to take to bed with you?"
+   ],
+   "sentence": "I jumped into my bed and read a book.",
+   "hasWriteImg": true,
+   "adultDef": "A bed is the soft place where we sleep at night. Beds have a mattress, a pillow and a doona or blankets. Some kids sleep in bunk beds, and babies sleep in a cot."
+  },
+  {
+   "word": "jet",
+   "segs": [
+    "j",
+    "e",
+    "t"
+   ],
+   "def": "A jet is a big, fast plane that flies high up in the sky.",
+   "ask": [
+    "Have you ever been on a jet?"
+   ],
+   "sentence": "The big jet flew over our house.",
+   "hasWriteImg": true,
+   "adultDef": "A jet is a big, fast plane with wings and loud jet engines. It flies high up in the sky. We go to the airport to get on a jet when we fly to another city or another country."
+  },
+  {
+   "word": "ten",
+   "segs": [
+    "t",
+    "e",
+    "n"
+   ],
+   "def": "Ten is a number. You have ten fingers and ten toes!",
+   "ask": [
+    "Can you count to ten?"
+   ],
+   "sentence": "I have ten fingers and ten toes.",
+   "hasWriteImg": true,
+   "adultDef": "Ten is a number. It comes after nine and before eleven: 8, 9, 10 . You have ten fingers and ten toes! We write ten with two digits: a 1 and a 0."
+  },
+  {
+   "word": "peg",
+   "segs": [
+    "p",
+    "e",
+    "g"
+   ],
+   "def": "A peg is a little clip. We use pegs to hang wet clothes on the line.",
+   "ask": [
+    "What do we use pegs for at home?"
+   ],
+   "sentence": "Mum used a peg to hang my shirt on the line.",
+   "hasWriteImg": true,
+   "adultDef": "A peg is a little clip made of wood or plastic. We use pegs to hang wet clothes on the washing line so the wind doesn't blow them away. (A peg can also be a hook on the wall, like the peg where you hang your school bag!)"
+  },
+  {
+   "word": "red",
+   "segs": [
+    "r",
+    "e",
+    "d"
+   ],
+   "def": "Red is a colour. Strawberries and fire trucks are red.",
+   "ask": [
+    "What things are red?"
+   ],
+   "sentence": "A stop sign is red.",
+   "hasWriteImg": true,
+   "adultDef": "Red is a colour. Strawberries, tomatoes, fire trucks and stop signs are red. If you mix red paint with white paint, you get pink!"
+  },
+  {
+   "word": "pen",
+   "segs": [
+    "p",
+    "e",
+    "n"
+   ],
+   "def": "A pen is something we write and draw with. It uses ink.",
+   "ask": [
+    "What would you write or draw with a pen?"
+   ],
+   "sentence": "Can I use your pen to write my name?",
+   "hasWriteImg": true,
+   "adultDef": "A pen is something we use to write or draw with ink. It is like a pencil, but you can't rub out what a pen writes. (A pen can also be a small fenced area where animals like hens or sheep are kept!)"
+  }
+ ]
+}

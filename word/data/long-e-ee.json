@@ -1,0 +1,103 @@
+{
+ "target": {
+  "letter": "ee",
+  "name": "long e",
+  "sound": "../vowels/g-long-e.mp3",
+  "letters": [
+   "ee"
+  ],
+  "noun": "letters"
+ },
+ "words": [
+  {
+   "word": "bee",
+   "segs": [
+    "b",
+    "ee"
+   ],
+   "def": "A bee is a small striped insect that buzzes around flowers and makes honey.",
+   "ask": [
+    "What do bees make?"
+   ],
+   "sentence": "A bee buzzed around the flowers in the garden.",
+   "hasWriteImg": true,
+   "adultDef": "A bee is a small insect with yellow and black stripes and wings. Bees fly from flower to flower to collect nectar, and they make honey. A bee can sting, so we watch them but never touch!"
+  },
+  {
+   "word": "tree",
+   "segs": [
+    "t",
+    "r",
+    "ee"
+   ],
+   "def": "A tree is a tall plant with a thick trunk, branches and leaves.",
+   "ask": [
+    "What kinds of trees do you know?"
+   ],
+   "sentence": "The koala was asleep up in the gum tree.",
+   "hasWriteImg": true,
+   "adultDef": "A tree is a very tall plant with a trunk, branches and leaves. In Australia we have lots of gum trees – koalas live in them and eat their leaves. Trees give us shade on a hot day."
+  },
+  {
+   "word": "seed",
+   "segs": [
+    "s",
+    "ee",
+    "d"
+   ],
+   "def": "A seed is a tiny part of a plant. If you put it in soil and water it, a new plant can grow.",
+   "ask": [
+    "What happens when you plant a seed and water it?"
+   ],
+   "sentence": "I planted a sunflower seed in a pot.",
+   "hasWriteImg": true,
+   "adultDef": "A seed is the tiny part of a plant that a new plant grows from. You plant a seed in the soil, give it water and sun, and it grows! Watermelons and apples have seeds inside."
+  },
+  {
+   "word": "green",
+   "segs": [
+    "g",
+    "r",
+    "ee",
+    "n"
+   ],
+   "def": "Green is a colour, like grass and leaves.",
+   "ask": [
+    "What things can you think of that are green?"
+   ],
+   "sentence": "The grass is green after the rain.",
+   "hasWriteImg": true,
+   "adultDef": "Green is a colour. Grass, leaves, frogs and broccoli are green. If you mix blue paint and yellow paint together, you get green!"
+  },
+  {
+   "word": "feet",
+   "segs": [
+    "f",
+    "ee",
+    "t"
+   ],
+   "def": "Feet are at the bottom of your legs. You walk on them. One is a foot, two are feet.",
+   "ask": [
+    "What do you wear on your feet?"
+   ],
+   "sentence": "I wiggled my feet in the sand at the beach.",
+   "hasWriteImg": true,
+   "adultDef": "Your feet are at the end of your legs. You stand, walk and run on them. You have one foot on each leg – when we talk about two of them, we say feet ."
+  },
+  {
+   "word": "sheep",
+   "segs": [
+    "sh",
+    "ee",
+    "p"
+   ],
+   "def": "A sheep is a farm animal with thick, woolly fur. It says baa!",
+   "ask": [
+    "What do sheep say?"
+   ],
+   "sentence": "The farmer has lots of sheep on his farm.",
+   "hasWriteImg": true,
+   "adultDef": "A sheep is a farm animal with a thick, woolly coat. Sheep say 'baa!' Farmers cut off the wool and we use it to make warm jumpers. Australia has lots and lots of sheep!"
+  }
+ ]
+}

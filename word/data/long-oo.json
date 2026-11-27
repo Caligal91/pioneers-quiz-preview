@@ -1,0 +1,103 @@
+{
+ "target": {
+  "letter": "oo",
+  "name": "long oo",
+  "sound": "../vowels/g-long-oo.mp3",
+  "letters": [
+   "oo"
+  ],
+  "noun": "letters"
+ },
+ "words": [
+  {
+   "word": "spoon",
+   "segs": [
+    "s",
+    "p",
+    "oo",
+    "n"
+   ],
+   "def": "A spoon is a tool you use to eat soup or cereal. It has a little bowl at one end.",
+   "ask": [
+    "What food do you eat with a spoon ?"
+   ],
+   "sentence": "I ate my cereal with a spoon.",
+   "hasWriteImg": true,
+   "adultDef": "A spoon is something we use to eat with. It has a handle and a little round bowl at the end – great for soup, cereal and ice cream!"
+  },
+  {
+   "word": "moon",
+   "segs": [
+    "m",
+    "oo",
+    "n"
+   ],
+   "def": "The moon is the bright round thing we see in the sky at night.",
+   "ask": [
+    "When can you see the moon ?"
+   ],
+   "sentence": "The moon was big and bright in the night sky.",
+   "hasWriteImg": true,
+   "adultDef": "The moon is the big round ball we can see in the sky, mostly at night. Sometimes it looks round and full, and sometimes it looks like a thin smile."
+  },
+  {
+   "word": "food",
+   "segs": [
+    "f",
+    "oo",
+    "d"
+   ],
+   "def": "Food is what we eat to stay healthy and strong.",
+   "ask": [
+    "What is your favourite food ?"
+   ],
+   "sentence": "My favourite food is spaghetti.",
+   "hasWriteImg": true,
+   "adultDef": "Food is what we eat to give our body energy and help us grow – like fruit, bread, pasta and vegetables. Animals need food too!"
+  },
+  {
+   "word": "soon",
+   "segs": [
+    "s",
+    "oo",
+    "n"
+   ],
+   "def": "Soon means in a short time from now. It is not long to wait!",
+   "ask": [
+    "What is something fun that is happening soon ?"
+   ],
+   "sentence": "Dad will be home soon.",
+   "hasWriteImg": true,
+   "adultDef": "Soon means in a short time – not long from now. \"Lunch will be ready soon.\" \"We will be there soon!\""
+  },
+  {
+   "word": "noon",
+   "segs": [
+    "n",
+    "oo",
+    "n"
+   ],
+   "def": "Noon is twelve o'clock in the middle of the day.",
+   "ask": [
+    "What do you usually do at noon ?"
+   ],
+   "sentence": "We had a picnic at noon, right in the middle of the day.",
+   "hasWriteImg": true,
+   "adultDef": "Noon is 12 o’clock in the middle of the day – it is also called midday . The sun is high in the sky and it is nearly time for lunch!"
+  },
+  {
+   "word": "zoo",
+   "segs": [
+    "z",
+    "oo"
+   ],
+   "def": "A zoo is a place where you can go to see lots of animals.",
+   "ask": [
+    "What animals would you like to see at the zoo ?"
+   ],
+   "sentence": "We saw a kangaroo and a koala at the zoo.",
+   "hasWriteImg": true,
+   "adultDef": "A zoo is a place where wild animals live and people can visit them – like kangaroos, lions, giraffes and seals. Zookeepers feed them and look after them."
+  }
+ ]
+}

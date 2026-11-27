@@ -1,0 +1,106 @@
+{
+ "target": {
+  "letter": "a",
+  "name": "long a",
+  "sound": "../vowels/g-long-a.mp3",
+  "split": true
+ },
+ "words": [
+  {
+   "word": "rake",
+   "segs": [
+    "r",
+    "a",
+    "k",
+    "e"
+   ],
+   "def": "A rake is a garden tool with a long handle. We use it to scoop up leaves.",
+   "ask": [
+    "Have you ever helped rake up leaves in the garden?"
+   ],
+   "sentence": "Dad asked me to rake up the leaves.",
+   "hasWriteImg": true,
+   "adultDef": "a garden tool with a long handle and teeth for gathering leaves – or to gather leaves with that tool."
+  },
+  {
+   "word": "late",
+   "segs": [
+    "l",
+    "a",
+    "t",
+    "e"
+   ],
+   "def": "Late means you come after the time you should be there. If the bell has rung and you are still running, you are late!",
+   "ask": [
+    "What happens if you are late for school?"
+   ],
+   "sentence": "Hurry up or we will be late for school!",
+   "hasWriteImg": true,
+   "adultDef": "after the time you should be there (the opposite of early)."
+  },
+  {
+   "word": "cave",
+   "segs": [
+    "c",
+    "a",
+    "v",
+    "e"
+   ],
+   "def": "A cave is a big, dark hole in the side of a hill or a cliff.",
+   "ask": [
+    "Have you ever been inside a cave?"
+   ],
+   "sentence": "We found a little cave in the rocks at the beach.",
+   "hasWriteImg": true,
+   "adultDef": "a big hollow space in the side of a hill, a cliff or a rock."
+  },
+  {
+   "word": "cake",
+   "segs": [
+    "c",
+    "a",
+    "k",
+    "e"
+   ],
+   "def": "A cake is a sweet food we bake in the oven. We often have cake on our birthday!",
+   "ask": [
+    "What is your favourite kind of cake?"
+   ],
+   "sentence": "We had chocolate cake at my birthday party.",
+   "hasWriteImg": true,
+   "adultDef": "a sweet food baked in the oven, often for birthdays."
+  },
+  {
+   "word": "game",
+   "segs": [
+    "g",
+    "a",
+    "m",
+    "e"
+   ],
+   "def": "A game is something fun we play, with rules, like soccer, hide and seek or a board game.",
+   "ask": [
+    "What's your favourite game to play?"
+   ],
+   "sentence": "We played a game of cricket in the backyard.",
+   "hasWriteImg": true,
+   "adultDef": "something you play for fun, often with rules and a winner."
+  },
+  {
+   "word": "tape",
+   "segs": [
+    "t",
+    "a",
+    "p",
+    "e"
+   ],
+   "def": "Tape is a sticky strip we use to stick paper together or to wrap up a present.",
+   "ask": [
+    "What could you fix or make with sticky tape?"
+   ],
+   "sentence": "I used sticky tape to wrap the present.",
+   "hasWriteImg": true,
+   "adultDef": "a sticky strip you use to hold or join things together, like sticky tape."
+  }
+ ]
+}

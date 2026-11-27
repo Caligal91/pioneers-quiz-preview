@@ -1,0 +1,106 @@
+{
+ "target": {
+  "letter": "o",
+  "name": "long o",
+  "sound": "../vowels/g-long-o.mp3",
+  "split": true
+ },
+ "words": [
+  {
+   "word": "rose",
+   "segs": [
+    "r",
+    "o",
+    "s",
+    "e"
+   ],
+   "def": "A rose is a pretty flower with a lovely smell. Roses can be red, pink or yellow, and their stems have thorns.",
+   "ask": [
+    "What colour roses have you seen?"
+   ],
+   "sentence": "Nan has a red rose in her garden.",
+   "hasWriteImg": true,
+   "adultDef": "a flower with a sweet smell and prickly thorns on its stem."
+  },
+  {
+   "word": "bone",
+   "segs": [
+    "b",
+    "o",
+    "n",
+    "e"
+   ],
+   "def": "A bone is a hard, white part inside your body. Dogs love to chew bones!",
+   "ask": [
+    "Which animal loves to chew on a bone?"
+   ],
+   "sentence": "The dog dug a hole and hid his bone.",
+   "hasWriteImg": true,
+   "adultDef": "one of the hard, white parts inside your body. Dogs love to chew them!"
+  },
+  {
+   "word": "note",
+   "segs": [
+    "n",
+    "o",
+    "t",
+    "e"
+   ],
+   "def": "A note is a short message you write down, like a note for Mum on the fridge.",
+   "ask": [
+    "Who could you write a note to?"
+   ],
+   "sentence": "Mum left a note on the fridge to say she was at the shops.",
+   "hasWriteImg": true,
+   "adultDef": "a short message you write down for someone."
+  },
+  {
+   "word": "poke",
+   "segs": [
+    "p",
+    "o",
+    "k",
+    "e"
+   ],
+   "def": "To poke is to push something with your finger or a stick, like poking a bubble.",
+   "ask": [
+    "Can you gently poke your nose with one finger?"
+   ],
+   "sentence": "Please do not poke the cat – it might scratch you!",
+   "hasWriteImg": true,
+   "adultDef": "to push something quickly with your finger or a stick."
+  },
+  {
+   "word": "nose",
+   "segs": [
+    "n",
+    "o",
+    "s",
+    "e"
+   ],
+   "def": "Your nose is on your face. You use it to smell and to breathe.",
+   "ask": [
+    "What can you smell with your nose right now?"
+   ],
+   "sentence": "Put sunscreen on your nose before you go out to play.",
+   "hasWriteImg": true,
+   "adultDef": "the part of your face you smell and breathe with."
+  },
+  {
+   "word": "hope",
+   "segs": [
+    "h",
+    "o",
+    "p",
+    "e"
+   ],
+   "def": "Hope means you really wish for something good to happen, like hoping for sunshine.",
+   "ask": [
+    "What do you hope you get for your birthday?"
+   ],
+   "sentence": "I hope it is sunny for footy on Saturday.",
+   "hasWriteImg": true,
+   "adultDef": "to really want something to happen."
+  }
+ ]
+}

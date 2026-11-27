@@ -1,0 +1,130 @@
+{
+ "target": {
+  "letter": "oa",
+  "name": "long o",
+  "sound": "../vowels/g-long-o.mp3",
+  "letters": [
+   "oa",
+   "ow"
+  ],
+  "noun": "letters"
+ },
+ "words": [
+  {
+   "word": "goat",
+   "segs": [
+    "g",
+    "oa",
+    "t"
+   ],
+   "def": "A goat is a farm animal with horns and a little beard. It says maa!",
+   "ask": [
+    "Have you ever seen a goat?"
+   ],
+   "sentence": "The goat at the farm ate my hat!",
+   "hasWriteImg": true,
+   "adultDef": "A goat is a farm animal with horns, a little beard and hooves. Goats say \"maa\", love to climb and will try to eat almost anything – even your hat!"
+  },
+  {
+   "word": "boat",
+   "segs": [
+    "b",
+    "oa",
+    "t"
+   ],
+   "def": "A boat is a small ship that floats on the water.",
+   "ask": [
+    "Have you been on a boat?"
+   ],
+   "sentence": "We went out in a boat to go fishing on the river.",
+   "hasWriteImg": true,
+   "adultDef": "A boat is something that floats and carries people on water. Some boats have sails, some have motors and some you row with oars, like a canoe or a tinny on the river."
+  },
+  {
+   "word": "coat",
+   "segs": [
+    "c",
+    "oa",
+    "t"
+   ],
+   "def": "A coat is something warm you wear over your clothes when it is cold.",
+   "ask": [
+    "When do you wear a coat?"
+   ],
+   "sentence": "I wear my warm coat on cold winter mornings.",
+   "hasWriteImg": true,
+   "adultDef": "A coat is a warm jacket you wear over your clothes when it is cold or rainy. Animals have coats too – a dog's coat is its fur and a sheep's coat is its wool."
+  },
+  {
+   "word": "foam",
+   "segs": [
+    "f",
+    "oa",
+    "m"
+   ],
+   "def": "Foam is lots of tiny bubbles stuck together, like the bubbles in a bubble bath.",
+   "ask": [
+    "Where have you seen foam?"
+   ],
+   "sentence": "My bubble bath was full of white foam.",
+   "hasWriteImg": true,
+   "adultDef": "Foam is lots of tiny bubbles all stuck together. You see white foam in a bubble bath, on top of a milkshake and where the waves splash on the beach."
+  },
+  {
+   "word": "own",
+   "segs": [
+    "ow",
+    "n"
+   ],
+   "def": "If something is your own, it belongs to you and nobody else.",
+   "ask": [
+    "What is something that is your very own?"
+   ],
+   "sentence": "I got my own bike for my birthday.",
+   "hasWriteImg": true,
+   "adultDef": "If something is your own, it belongs to you and nobody else: \"This is my own bed.\" You can also say you own it: \"I own a bike.\""
+  },
+  {
+   "word": "mow",
+   "segs": [
+    "m",
+    "ow"
+   ],
+   "def": "To mow is to cut the grass with a lawn mower.",
+   "ask": [
+    "Who mows the lawn at your place?"
+   ],
+   "sentence": "Dad will mow the lawn on Saturday.",
+   "hasWriteImg": true,
+   "adultDef": "To mow means to cut grass short with a lawn mower. On the weekend, lots of families mow the lawn in the backyard."
+  },
+  {
+   "word": "bow",
+   "segs": [
+    "b",
+    "ow"
+   ],
+   "def": "A bow is a pretty knot made from ribbon, like the ribbon on a present.",
+   "ask": [
+    "Can you tie a bow?"
+   ],
+   "sentence": "Nan tied a red ribbon bow on top of my present.",
+   "hasWriteImg": true,
+   "adultDef": "A bow is a ribbon tied with two loops – on top of a present, in someone's hair, or on your shoelaces. This bow rhymes with go and low ."
+  },
+  {
+   "word": "low",
+   "segs": [
+    "l",
+    "ow"
+   ],
+   "def": "Low means not high. Something low is close to the ground.",
+   "ask": [
+    "Can you touch something low?"
+   ],
+   "sentence": "The low branch of the gum tree is easy to climb.",
+   "hasWriteImg": true,
+   "adultDef": "Low means near the ground, or not high. A low branch is easy to reach. A low voice is deep, like a big bear's growl. Low is the opposite of high."
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "target": {
+  "letter": "ea",
+  "name": "long e",
+  "sound": "../vowels/g-long-e.mp3",
+  "letters": [
+   "ea"
+  ],
+  "noun": "letters"
+ },
+ "words": [
+  {
+   "word": "tea",
+   "segs": [
+    "t",
+    "ea"
+   ],
+   "def": "Tea is a hot drink that people make with leaves and hot water.",
+   "ask": [
+    "Who drinks tea at your house?"
+   ],
+   "sentence": "Nan made a cup of tea and had it with a biscuit.",
+   "hasWriteImg": true,
+   "adultDef": "Tea is a hot drink. You make it by putting tea leaves (or a tea bag) in hot water. Lots of grown-ups have a cup of tea in the morning. In Australia, tea can also mean dinner – \"Come inside, it's time for tea!\""
+  },
+  {
+   "word": "read",
+   "segs": [
+    "r",
+    "ea",
+    "d"
+   ],
+   "def": "To read is to look at words and know what they say, like when you read a book.",
+   "ask": [
+    "What is your favourite book or story to read?"
+   ],
+   "sentence": "I read a book every night.",
+   "hasWriteImg": true,
+   "adultDef": "To read means to look at words and understand what they say. You are reading right now! We read books, signs, menus and messages."
+  },
+  {
+   "word": "heat",
+   "segs": [
+    "h",
+    "ea",
+    "t"
+   ],
+   "def": "Heat is when something is very warm or hot, like the heat from the sun.",
+   "ask": [
+    "When do you feel the heat?"
+   ],
+   "sentence": "In summer, the heat makes us want to go for a swim.",
+   "hasWriteImg": true,
+   "adultDef": "Heat is the hot feeling from the sun, a fire or an oven. In an Aussie summer the heat can be really strong, so we wear a hat, drink water and play in the shade."
+  },
+  {
+   "word": "eat",
+   "segs": [
+    "ea",
+    "t"
+   ],
+   "def": "To eat is to put food in your mouth and swallow it.",
+   "ask": [
+    "What is your favourite thing to eat?"
+   ],
+   "sentence": "We eat sausages in bread at the school sausage sizzle.",
+   "hasWriteImg": true,
+   "adultDef": "To eat means to put food in your mouth, chew it and swallow it. We eat breakfast, lunch and dinner. Koalas eat gum leaves and seals eat fish."
+  },
+  {
+   "word": "bead",
+   "segs": [
+    "b",
+    "ea",
+    "d"
+   ],
+   "def": "A bead is a tiny ball with a hole in it. You can put beads on a string to make a bracelet.",
+   "ask": [
+    "Have you ever made something with beads?"
+   ],
+   "sentence": "I put a red bead on my string to make a necklace.",
+   "hasWriteImg": true,
+   "adultDef": "A bead is a little ball (or shape) with a hole through the middle. You slide beads onto a string to make a necklace or a bracelet. When there are two or more, we say beads ."
+  },
+  {
+   "word": "sea",
+   "segs": [
+    "s",
+    "ea"
+   ],
+   "def": "The sea is the big, salty water at the beach. Waves roll in from the sea.",
+   "ask": [
+    "Have you been to the sea?"
+   ],
+   "sentence": "We saw a dolphin jump out of the sea.",
+   "hasWriteImg": true,
+   "adultDef": "The sea is the big, salty water next to the beach. Fish, sharks, seals and dolphins live in the sea. Sea sounds the same as see (with your eyes), but it is spelled with ea."
+  }
+ ]
+}

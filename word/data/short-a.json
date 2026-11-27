@@ -1,0 +1,91 @@
+{
+ "target": {
+  "letter": "a",
+  "name": "short a",
+  "sound": "../vowels/g-short-a.mp3"
+ },
+ "words": [
+  {
+   "word": "hat",
+   "segs": [
+    "h",
+    "a",
+    "t"
+   ],
+   "def": "A hat is something you wear on your head. It can keep the sun off you, or keep your head warm.",
+   "ask": [
+    "When would someone wear a hat?"
+   ],
+   "sentence": "Sarah is wearing a yellow hat.",
+   "hasWriteImg": true,
+   "adultDef": "A hat is something people wear on their heads. There are many kinds, like caps, beanies, or wide hats. People wear hats to protect themselves from the sun, stay warm, or just to look nice. Hats can be made from materials like cloth, wool, or straw."
+  },
+  {
+   "word": "map",
+   "segs": [
+    "m",
+    "a",
+    "p"
+   ],
+   "def": "A map is a picture that shows where places are. It helps you find your way.",
+   "ask": [],
+   "sentence": "I used a map to find the park.",
+   "hasWriteImg": true,
+   "adultDef": "A \"map\" is a picture that shows where places are and how to get to them. It helps us find our way."
+  },
+  {
+   "word": "bag",
+   "segs": [
+    "b",
+    "a",
+    "g"
+   ],
+   "def": "A bag is something you carry things in, like your lunch or your books.",
+   "ask": [],
+   "sentence": "Mia put her lunch in her bag.",
+   "hasWriteImg": true,
+   "adultDef": "A \"bag\" is something we use to carry things. There are many kinds, like school bags, shopping bags, or handbags. People use bags to carry their books, lunch, or clothes from one place to another. Bags can be made from materials like cloth, plastic, or leather."
+  },
+  {
+   "word": "sad",
+   "segs": [
+    "s",
+    "a",
+    "d"
+   ],
+   "def": "Sad is how you feel when something isn't nice, like when your toy breaks. You might feel like crying.",
+   "ask": [],
+   "sentence": "Sam was sad when his toy broke.",
+   "hasWriteImg": true,
+   "adultDef": "Sad is a feeling people have when they are unhappy. You might feel sad when you lose a toy, miss someone, or have a bad day. When people are sad, they might cry, feel quiet, or want a cuddle. Talking to someone you trust can help you feel better."
+  },
+  {
+   "word": "cat",
+   "segs": [
+    "c",
+    "a",
+    "t"
+   ],
+   "def": "A cat is a small, furry animal with whiskers and a long tail. It says miaow!",
+   "ask": [
+    "What sound does a cat make?"
+   ],
+   "sentence": "The cat sat on the mat.",
+   "hasWriteImg": true,
+   "adultDef": "A cat is a small furry animal that many people keep as a pet. There are many kinds, with different colours and patterns, like orange, black, or grey. Cats purr when they are happy, drink milk, and love to play and sleep. Cats have sharp claws, whiskers, and a long tail."
+  },
+  {
+   "word": "tap",
+   "segs": [
+    "t",
+    "a",
+    "p"
+   ],
+   "def": "A tap is what you turn to make water come out, like at the sink when you wash your hands.",
+   "ask": [],
+   "sentence": "Please turn off the tap.",
+   "hasWriteImg": true,
+   "adultDef": "A tap is something you turn on to make water come out. There are many kinds, like taps in a kitchen, a bathroom, or outside in the garden. People use taps to wash their hands, fill a cup, or water the plants. Taps are often made from metal, and you turn them to start or stop the water."
+  }
+ ]
+}

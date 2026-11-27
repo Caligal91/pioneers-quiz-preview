@@ -1,0 +1,103 @@
+{
+ "target": {
+  "letter": "oo",
+  "name": "short oo",
+  "sound": "../vowels/g-short-oo.mp3",
+  "letters": [
+   "oo"
+  ],
+  "noun": "letters"
+ },
+ "words": [
+  {
+   "word": "book",
+   "segs": [
+    "b",
+    "oo",
+    "k"
+   ],
+   "def": "A book has pages with words and pictures. We read books for fun and to learn.",
+   "ask": [
+    "What is your favourite book ?"
+   ],
+   "sentence": "I read a book about dogs before bed.",
+   "hasWriteImg": true,
+   "adultDef": "A book is pages with words or pictures, joined together on one side. We read books to learn things and to enjoy stories."
+  },
+  {
+   "word": "cook",
+   "segs": [
+    "c",
+    "oo",
+    "k"
+   ],
+   "def": "To cook is to make food hot and ready to eat, like cooking pasta on the stove.",
+   "ask": [
+    "What can you cook ?"
+   ],
+   "sentence": "My dad likes to cook pancakes on Sunday.",
+   "hasWriteImg": true,
+   "adultDef": "To cook means to make food ready to eat by heating it – like frying an egg or baking a cake. A cook is also a person who cooks."
+  },
+  {
+   "word": "foot",
+   "segs": [
+    "f",
+    "oo",
+    "t"
+   ],
+   "def": "Your foot is at the bottom of your leg. You stand and walk on it. One foot, two feet!",
+   "ask": [
+    "What things can you do with your foot ?"
+   ],
+   "sentence": "I kicked the ball with my left foot.",
+   "hasWriteImg": true,
+   "adultDef": "Your foot is the part of your body at the end of your leg that you stand and walk on. When there are two, we say feet ."
+  },
+  {
+   "word": "wood",
+   "segs": [
+    "w",
+    "oo",
+    "d"
+   ],
+   "def": "Wood is the hard material that comes from trees. We use it to make tables, fences and campfires.",
+   "ask": [
+    "What things at home are made of wood ?"
+   ],
+   "sentence": "We need some wood for the campfire.",
+   "hasWriteImg": true,
+   "adultDef": "Wood is the hard stuff that trees are made of. We use wood to make tables, chairs, fences and pencils. The woods can also mean a small forest."
+  },
+  {
+   "word": "took",
+   "segs": [
+    "t",
+    "oo",
+    "k"
+   ],
+   "def": "Took is the past of take. If you took a biscuit, you picked it up and ate it.",
+   "ask": [
+    "What did you take to school today?"
+   ],
+   "sentence": "My brother took the last biscuit.",
+   "hasWriteImg": true,
+   "adultDef": "Took means you picked something up and had it with you, in the past. \"Today I take my hat. Yesterday I took my hat.\""
+  },
+  {
+   "word": "good",
+   "segs": [
+    "g",
+    "oo",
+    "d"
+   ],
+   "def": "Good means nice or well done, like a good dog or a good job.",
+   "ask": [
+    "What is something you are really good at?"
+   ],
+   "sentence": "Our dog is very good at catching a ball.",
+   "hasWriteImg": true,
+   "adultDef": "Good means nice, well done or the right way. \"That was a good game!\" \"Good job!\" \"The cake tastes good.\""
+  }
+ ]
+}

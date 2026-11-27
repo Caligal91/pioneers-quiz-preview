@@ -1,0 +1,106 @@
+{
+ "target": {
+  "letter": "i",
+  "name": "long i",
+  "sound": "../vowels/g-long-i.mp3",
+  "split": true
+ },
+ "words": [
+  {
+   "word": "ride",
+   "segs": [
+    "r",
+    "i",
+    "d",
+    "e"
+   ],
+   "def": "To ride is to sit on something and go along on it, like a bike, a scooter or a horse.",
+   "ask": [
+    "What do you like to ride – a bike, a scooter, a horse?"
+   ],
+   "sentence": "I like to ride my bike to the park.",
+   "hasWriteImg": true,
+   "adultDef": "to sit on something and make it move, like a bike or a horse."
+  },
+  {
+   "word": "like",
+   "segs": [
+    "l",
+    "i",
+    "k",
+    "e"
+   ],
+   "def": "Like means you enjoy something. If you like pizza, pizza makes you happy!",
+   "ask": [
+    "What is something you really like?"
+   ],
+   "sentence": "Do you like fairy bread?",
+   "hasWriteImg": true,
+   "adultDef": "to enjoy something or think it is good."
+  },
+  {
+   "word": "nine",
+   "segs": [
+    "n",
+    "i",
+    "n",
+    "e"
+   ],
+   "def": "Nine is a number. It comes after eight and before ten.",
+   "ask": [
+    "Can you show me nine fingers?"
+   ],
+   "sentence": "My little brother is nine years old.",
+   "hasWriteImg": true,
+   "adultDef": "the number 9 – one more than eight."
+  },
+  {
+   "word": "time",
+   "segs": [
+    "t",
+    "i",
+    "m",
+    "e"
+   ],
+   "def": "Time tells us when things happen. A clock shows us the time.",
+   "ask": [
+    "What time do you go to bed?"
+   ],
+   "sentence": "It is time to pack up and go home.",
+   "hasWriteImg": true,
+   "adultDef": "what the clock tells us – or a moment when something happens (\"It is time to go!\")."
+  },
+  {
+   "word": "bike",
+   "segs": [
+    "b",
+    "i",
+    "k",
+    "e"
+   ],
+   "def": "A bike has two wheels and a seat. You push the pedals with your feet to make it go.",
+   "ask": [
+    "Where do you like to ride your bike?"
+   ],
+   "sentence": "I wear my helmet when I ride my bike.",
+   "hasWriteImg": true,
+   "adultDef": "a bicycle – it has two wheels and pedals that you push with your feet."
+  },
+  {
+   "word": "kite",
+   "segs": [
+    "k",
+    "i",
+    "t",
+    "e"
+   ],
+   "def": "A kite is a light toy that flies high in the sky on a long string when the wind blows.",
+   "ask": [
+    "Have you ever flown a kite?"
+   ],
+   "sentence": "We flew a kite at the beach on a windy day.",
+   "hasWriteImg": true,
+   "adultDef": "a toy made of cloth or paper on a long string that flies in the wind."
+  }
+ ]
+}

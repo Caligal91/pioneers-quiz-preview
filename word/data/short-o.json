@@ -1,0 +1,99 @@
+{
+ "target": {
+  "letter": "o",
+  "name": "short o",
+  "sound": "../vowels/g-short-o.mp3"
+ },
+ "words": [
+  {
+   "word": "dog",
+   "segs": [
+    "d",
+    "o",
+    "g"
+   ],
+   "def": "A dog is an animal with four legs and a waggy tail. Dogs say woof!",
+   "ask": [
+    "Do you have a dog, or know one?"
+   ],
+   "sentence": "My dog wags her tail when I get home.",
+   "hasWriteImg": true,
+   "adultDef": "A dog is an animal with four legs, fur and a waggy tail. Dogs say 'woof' and many people have a dog as a pet. A baby dog is called a puppy."
+  },
+  {
+   "word": "top",
+   "segs": [
+    "t",
+    "o",
+    "p"
+   ],
+   "def": "A top is a shirt or jumper you wear on your body. The top is also the highest part of something.",
+   "ask": [
+    "What top are you wearing today?"
+   ],
+   "sentence": "It is cold, so I put on my warm top.",
+   "hasWriteImg": true,
+   "adultDef": "A top is a piece of clothing you wear on the top part of your body, like a t-shirt, a jumper or a hoodie. The top of something is also its highest part \u2013 like the top of a hill."
+  },
+  {
+   "word": "pot",
+   "segs": [
+    "p",
+    "o",
+    "t"
+   ],
+   "def": "A pot is a deep, round pan we cook food in, like soup.",
+   "ask": [
+    "What can you cook in a pot?"
+   ],
+   "sentence": "Mum cooked the soup in a big pot.",
+   "hasWriteImg": true,
+   "adultDef": "A pot is a deep, round pan we use to cook food like soup or pasta on the stove. A plant pot is a pot that holds soil for a plant to grow in."
+  },
+  {
+   "word": "box",
+   "segs": [
+    "b",
+    "o",
+    "x"
+   ],
+   "def": "A box is something with flat sides that we keep things in.",
+   "ask": [
+    "What could you keep in a box?"
+   ],
+   "sentence": "Put your toys back in the box.",
+   "hasWriteImg": true,
+   "adultDef": "A box is a container with flat sides, often made of cardboard, wood or plastic. We keep things in a box, and presents and parcels often come in a box."
+  },
+  {
+   "word": "jog",
+   "segs": [
+    "j",
+    "o",
+    "g"
+   ],
+   "def": "To jog is to run slowly, like going for a run in the park.",
+   "ask": [
+    "Where could you go for a jog?"
+   ],
+   "sentence": "Dad likes to jog around the park.",
+   "hasWriteImg": true,
+   "adultDef": "To jog is to run at a slow, steady speed, often for exercise. People jog around the park or along the beach to keep fit."
+  },
+  {
+   "word": "dot",
+   "segs": [
+    "d",
+    "o",
+    "t"
+   ],
+   "def": "A dot is a tiny round spot, like the full stop at the end of a sentence.",
+   "ask": [
+    "Can you draw a dot?"
+   ],
+   "sentence": "The ladybird has a black dot on its back.",
+   "hasWriteImg": true,
+   "adultDef": "A dot is a small round mark, like the full stop at the end of a sentence. A ladybird has black dots on its red back."
+  }
+ ]
+}

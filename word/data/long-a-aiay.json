@@ -1,0 +1,129 @@
+{
+ "target": {
+  "letter": "ai",
+  "name": "long a",
+  "sound": "../vowels/g-long-a.mp3",
+  "letters": [
+   "ai",
+   "ay"
+  ],
+  "noun": "letters"
+ },
+ "words": [
+  {
+   "word": "rain",
+   "segs": [
+    "r",
+    "ai",
+    "n"
+   ],
+   "def": "Rain is water that falls from the clouds in little drops.",
+   "ask": [
+    "What do you like to do on a rainy day?"
+   ],
+   "sentence": "The rain fell on the tin roof all night.",
+   "hasWriteImg": true,
+   "adultDef": "Rain is water that falls from the clouds in drops. Plants and animals need rain to drink and grow. When it rains, we might grab an umbrella – or splash in the puddles!"
+  },
+  {
+   "word": "aim",
+   "segs": [
+    "ai",
+    "m"
+   ],
+   "def": "To aim is to point something at a target, like aiming a ball at the goal.",
+   "ask": [
+    "What do you aim at when you play a game?"
+   ],
+   "sentence": "Take aim and kick the footy between the posts.",
+   "hasWriteImg": true,
+   "adultDef": "To aim means to point something at the thing you want to hit – like a ball at the goal or a beanbag at a bucket. When you take aim, you look carefully before you throw or kick."
+  },
+  {
+   "word": "pain",
+   "segs": [
+    "p",
+    "ai",
+    "n"
+   ],
+   "def": "Pain is the hurt feeling you get when you bump your knee.",
+   "ask": [
+    "What do you do when you have a pain, like a sore knee?"
+   ],
+   "sentence": "I had a pain in my knee after I fell off my scooter.",
+   "hasWriteImg": true,
+   "adultDef": "Pain is the hurt feeling you get when part of your body is sore – like when you fall over and graze your knee, or have a toothache. A band-aid or a cuddle can help it feel better."
+  },
+  {
+   "word": "wait",
+   "segs": [
+    "w",
+    "ai",
+    "t"
+   ],
+   "def": "To wait is to stay where you are until something happens, like waiting in line.",
+   "ask": [
+    "What is something you have to wait for?"
+   ],
+   "sentence": "We had to wait in line for a sausage at the footy.",
+   "hasWriteImg": true,
+   "adultDef": "To wait means to stay where you are until something happens. We wait for the bus, wait in line at the canteen and wait for our turn in a game."
+  },
+  {
+   "word": "may",
+   "segs": [
+    "m",
+    "ay"
+   ],
+   "def": "May is a polite word we use to ask for something, like: May I have a turn, please?",
+   "ask": [
+    "How do you ask nicely if you want a turn?"
+   ],
+   "sentence": "May I have a turn on the swing, please?",
+   "hasWriteImg": true,
+   "adultDef": "We say may when we ask nicely if we are allowed to do something: \"May I have a turn?\" It can also mean something might happen: \"It may rain today.\" (May with a capital M is also a month of the year!)"
+  },
+  {
+   "word": "day",
+   "segs": [
+    "d",
+    "ay"
+   ],
+   "def": "A day is the time from sunrise to sunset. There are seven days in a week.",
+   "ask": [
+    "What is your favourite day of the week?"
+   ],
+   "sentence": "It was a hot, sunny day at the beach.",
+   "hasWriteImg": true,
+   "adultDef": "A day is the time from when the sun comes up in the morning until it goes down at night, when it is light outside. There are seven days in a week."
+  },
+  {
+   "word": "way",
+   "segs": [
+    "w",
+    "ay"
+   ],
+   "def": "A way is a path or direction, like the way to school. It can also mean how you do something.",
+   "ask": [
+    "Do you know the way from your house to school?"
+   ],
+   "sentence": "Mum showed me the way to the new library.",
+   "hasWriteImg": true,
+   "adultDef": "The way is the road or path you take to get somewhere: \"Which way to the beach?\" Way can also mean how you do something: \"This is the way I tie my shoes.\""
+  },
+  {
+   "word": "lay",
+   "segs": [
+    "l",
+    "ay"
+   ],
+   "def": "To lay is to put something down flat, like laying a towel on the sand. Chickens lay eggs!",
+   "ask": [
+    "What animals do you know that lay eggs?"
+   ],
+   "sentence": "Our chooks lay eggs every morning.",
+   "hasWriteImg": true,
+   "adultDef": "To lay means to put something down flat, or to make an egg come out. Hens (chooks!) lay eggs. We lay a picnic rug on the grass and lay the table for dinner."
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "target": {
+  "letter": "u",
+  "name": "short u",
+  "sound": "../vowels/g-short-u.mp3"
+ },
+ "words": [
+  {
+   "word": "fun",
+   "segs": [
+    "f",
+    "u",
+    "n"
+   ],
+   "def": "Fun is when you are having a really good time, like playing at the park.",
+   "ask": [
+    "What do you do for fun?"
+   ],
+   "sentence": "We had so much fun at the beach!",
+   "hasWriteImg": true,
+   "adultDef": "Fun is when you enjoy yourself and have a good time. Playing at the park, going to the beach and playing games with friends are lots of fun!"
+  },
+  {
+   "word": "cup",
+   "segs": [
+    "c",
+    "u",
+    "p"
+   ],
+   "def": "A cup is something we drink from, like water or milk.",
+   "ask": [
+    "What do you like to drink from a cup?"
+   ],
+   "sentence": "Can I have a cup of water, please?",
+   "hasWriteImg": true,
+   "adultDef": "A cup is a small container we drink from. We drink water, milk or juice from a cup. A trophy you win can also be called a cup!"
+  },
+  {
+   "word": "bus",
+   "segs": [
+    "b",
+    "u",
+    "s"
+   ],
+   "def": "A bus is a big, long car with lots of seats that carries lots of people.",
+   "ask": [
+    "Have you been on a bus?"
+   ],
+   "sentence": "We wait for the bus at the bus stop.",
+   "hasWriteImg": true,
+   "adultDef": "A bus is a big, long vehicle with lots of seats that carries many people. A school bus takes children to school, and we wait for a bus at the bus stop."
+  },
+  {
+   "word": "bug",
+   "segs": [
+    "b",
+    "u",
+    "g"
+   ],
+   "def": "A bug is a tiny creepy-crawly, like an ant or a ladybird.",
+   "ask": [
+    "What bugs have you seen in the garden?"
+   ],
+   "sentence": "A little bug crawled up the wall.",
+   "hasWriteImg": true,
+   "adultDef": "A bug is a small insect or creepy-crawly, like an ant, a beetle or a ladybird. Lots of bugs live in the garden."
+  },
+  {
+   "word": "mud",
+   "segs": [
+    "m",
+    "u",
+    "d"
+   ],
+   "def": "Mud is wet, sticky dirt. It makes your shoes messy!",
+   "ask": [
+    "Where can you find mud?"
+   ],
+   "sentence": "My boots got stuck in the mud.",
+   "hasWriteImg": true,
+   "adultDef": "Mud is wet, sticky dirt. When rain falls on the dirt it turns into mud \u2013 great for jumping in, but it makes your shoes very messy!"
+  },
+  {
+   "word": "hug",
+   "segs": [
+    "h",
+    "u",
+    "g"
+   ],
+   "def": "A hug is when you put your arms around someone you love.",
+   "ask": [
+    "Who do you like to give a hug to?"
+   ],
+   "sentence": "Nan gave me a big hug.",
+   "hasWriteImg": true,
+   "adultDef": "A hug is when you put your arms around someone and hold them close, to show you love them or to make them feel better."
+  }
+ ]
+}
