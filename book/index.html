@@ -12,11 +12,12 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;font-family:Andika,"Segoe UI",sans-serif;color:var(--ink);background:#fff8f0;text-align:center;overflow-x:hidden}
 .wrap{max-width:980px;margin:0 auto;padding:10px 12px 16px}
-.book{position:relative;height:min(520px,92vw);background:#fff;border:6px solid var(--o);border-radius:28px;box-shadow:0 6px 0 rgba(244,120,23,.25),0 6px 18px rgba(0,0,0,.08);overflow:hidden}
+.book{position:relative;height:min(540px,135vw);background:#fff;border:6px solid var(--o);border-radius:28px;box-shadow:0 6px 0 rgba(244,120,23,.25),0 6px 18px rgba(0,0,0,.08);overflow:hidden}
 .pg{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;padding:14px 18px}
+.pg:not(.cover):not(.end){padding-top:62px;padding-bottom:30px}
 .pg.on{display:flex;animation:in .35s ease}
 @keyframes in{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
-.aa{font-size:min(44px,8vw);font-weight:700;letter-spacing:.3em;position:absolute;top:12px;left:0;right:0}
+.aa{font-size:min(44px,8vw);font-weight:700;letter-spacing:.3em;position:absolute;top:12px;left:0;right:0;pointer-events:none}
 u{text-decoration:none;color:var(--v);border-bottom:.09em solid var(--v)}
 /* cover */
 .brand{font-weight:700;font-size:min(26px,5.5vw);color:#fff;background:var(--o);border-radius:999px;padding:4px 22px;letter-spacing:.04em}
@@ -30,15 +31,15 @@ u{text-decoration:none;color:var(--v);border-bottom:.09em solid var(--v)}
 .pic:active{transform:scale(.94)}
 .pic.say{animation:pop .6s ease}
 @keyframes pop{0%{transform:scale(1)}30%{transform:scale(1.14) rotate(-3deg)}60%{transform:scale(1.06) rotate(2deg)}100%{transform:scale(1)}}
-.big-pic{width:min(300px,52vw);height:min(300px,52vw);margin-top:34px}
-.word{font-size:min(54px,11vw);line-height:1.25;margin-top:4px;font-weight:700}
+.big-pic{width:min(240px,46vw);height:min(240px,46vw);margin-top:0}
+.word{font-size:min(50px,10vw);line-height:1.25;margin-top:4px;font-weight:700}
 .word span{display:block}
 .hint{font-size:min(16px,3.6vw);color:#777;margin-top:2px}
 .sent{font-size:min(46px,9vw);font-weight:700;margin-top:8px;cursor:pointer;padding:2px 14px;border-radius:14px}
 .sent:active{background:#fff1e0}
 .sent.say{background:#fff1e0}
 /* four picture page */
-.four{display:grid;grid-template-columns:1fr 1fr;gap:min(18px,3vw);margin-top:44px;width:min(560px,90%);position:relative}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:min(18px,3vw);margin-top:0;width:min(560px,90%);position:relative}
 .four .pic{width:100%;height:min(170px,30vw);object-fit:contain;background:#fff8f0;border-radius:18px;border:3px solid #ffe2c4;padding:8px}
 .four .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;border:4px solid var(--ink);border-radius:12px;padding:0 18px;font-size:min(54px,10vw);font-weight:700;letter-spacing:.12em;z-index:2;pointer-events:none}
 .pgn{position:absolute;bottom:8px;right:16px;font-size:14px;color:#999}
@@ -85,10 +86,10 @@ u{text-decoration:none;color:var(--v);border-bottom:.09em solid var(--v)}
  <section class="pg"><div class="aa">A a</div><img class="pic big-pic" data-say="ham" src="img/ham.png" alt="ham"><div class="word"><span>H<u>a</u>m</span><span>h<u>a</u>m</span></div><div class="hint">Tap the picture.</div></section>
 
  <!-- sentence pages -->
- <section class="pg"><img class="pic big-pic" style="margin-top:0" data-say="ant" src="img/ant.png" alt="ant"><div class="sent" data-say="s-ant">This is <u>a</u>n <u>a</u>nt.</div><div class="hint">Tap the picture or the sentence.</div></section>
- <section class="pg"><img class="pic big-pic" style="margin-top:0" data-say="cat" src="img/cat.png" alt="cat"><div class="sent" data-say="s-cat">This is <u>a</u> c<u>a</u>t.</div><div class="hint">Tap the picture or the sentence.</div></section>
- <section class="pg"><img class="pic big-pic" style="margin-top:0" data-say="pan" src="img/pan.png" alt="pan"><div class="sent" data-say="s-pan">This is <u>a</u> p<u>a</u>n.</div><div class="hint">Tap the picture or the sentence.</div></section>
- <section class="pg"><img class="pic big-pic" style="margin-top:0" data-say="ham" src="img/ham.png" alt="ham"><div class="sent" data-say="s-ham">This is <u>a</u> h<u>a</u>m.</div><div class="hint">Tap the picture or the sentence.</div></section>
+ <section class="pg"><img class="pic big-pic" data-say="ant" src="img/ant.png" alt="ant"><div class="sent" data-say="s-ant">This is <u>a</u>n <u>a</u>nt.</div><div class="hint">Tap the picture or the sentence.</div></section>
+ <section class="pg"><img class="pic big-pic" data-say="cat" src="img/cat.png" alt="cat"><div class="sent" data-say="s-cat">This is <u>a</u> c<u>a</u>t.</div><div class="hint">Tap the picture or the sentence.</div></section>
+ <section class="pg"><img class="pic big-pic" data-say="pan" src="img/pan.png" alt="pan"><div class="sent" data-say="s-pan">This is <u>a</u> p<u>a</u>n.</div><div class="hint">Tap the picture or the sentence.</div></section>
+ <section class="pg"><img class="pic big-pic" data-say="ham" src="img/ham.png" alt="ham"><div class="sent" data-say="s-ham">This is <u>a</u> h<u>a</u>m.</div><div class="hint">Tap the picture or the sentence.</div></section>
 
  <section class="pg end">
   <h2>Well done! ⭐</h2>
@@ -116,8 +117,9 @@ pages.forEach((_,i)=>{const d=document.createElement('i');d.onclick=()=>go(i);do
 const cache={};let playing=null;
 function aud(k){return cache[k]||(cache[k]=new Audio('audio/'+k+'.mp3'))}
 function say(k,el){if(playing){playing.pause();playing.currentTime=0}
- const a=aud(k);playing=a;a.currentTime=0;a.play().catch(()=>{});
+ const a=aud(k);playing=a;a.currentTime=0;a.play().catch(()=>{toast()});
  if(el){el.classList.remove('say');void el.offsetWidth;el.classList.add('say');setTimeout(()=>el.classList.remove('say'),700)}}
+let tt=null;function toast(){let t=document.getElementById('toast');if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:absolute;left:12px;right:12px;bottom:34px;background:#222230;color:#fff;border-radius:12px;padding:8px 12px;font-size:15px;z-index:9;pointer-events:none';t.textContent='No sound? Turn the volume up and the silent switch off, then tap the picture again.';document.getElementById('book').appendChild(t)}t.style.display='block';clearTimeout(tt);tt=setTimeout(()=>t.style.display='none',4000)}
 function go(n){cur=Math.max(0,Math.min(pages.length-1,n));
  pages.forEach((p,i)=>p.classList.toggle('on',i===cur));
  [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur));
