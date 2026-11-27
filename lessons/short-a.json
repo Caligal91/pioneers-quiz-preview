@@ -1,0 +1,103 @@
+{
+ "sound": "short a",
+ "letter": "a",
+ "words": [
+  "hat",
+  "map",
+  "bag",
+  "sad",
+  "cat",
+  "tap"
+ ],
+ "sentences": [
+  "Sarah is wearing a yellow hat.",
+  "I used a map to find the park.",
+  "Mia put her lunch in her bag.",
+  "Sam was sad when his toy broke.",
+  "The cat sat on the mat.",
+  "Please turn off the tap."
+ ],
+ "example": "cat",
+ "hunt": {
+  "yes": [
+   "cat",
+   "hat",
+   "map",
+   "van",
+   "rabbit",
+   "apple",
+   "ladder",
+   "hammer",
+   "kangaroo",
+   "carrot"
+  ],
+  "no": {
+   "pig": "short i",
+   "sun": "short u",
+   "dog": "short o",
+   "snake": "long a: it says its name!",
+   "rain": "long a: it says its name!",
+   "fish": "short i",
+   "egg": "short e",
+   "duck": "short u",
+   "tent": "short e",
+   "octopus": "short o"
+  },
+  "img": "chart"
+ },
+ "homehunt": [
+  "hat",
+  "cat",
+  "map",
+  "pan",
+  "van"
+ ],
+ "learnt": [
+  "the short a sound",
+  "a says /a/ like in apple",
+  "hat, map, bag, sad, cat, tap",
+  "glued sounds: am and an"
+ ],
+ "books": [
+  [
+   "A",
+   "pat-and-the-bat",
+   "Pat and the Bat",
+   "Emerging"
+  ],
+  [
+   "B",
+   "max-and-the-cat",
+   "Max and the Cat",
+   "Emerging"
+  ],
+  [
+   "C",
+   "jack-and-the-damp-camp",
+   "Jack and the Damp Camp",
+   "Consolidating"
+  ],
+  [
+   "D",
+   "sam-and-the-crab",
+   "Sam and the Crab",
+   "Consolidating"
+  ],
+  [
+   "E",
+   "brad-and-the-lost-bag",
+   "Brad and the Lost Bag",
+   "Extending"
+  ],
+  [
+   "F",
+   "tash-and-the-lost-lamb",
+   "Tash and the Lost Lamb",
+   "Extending"
+  ]
+ ],
+ "id": "short-a",
+ "prev": null,
+ "next": "short-e",
+ "nextStory": "Pat and the Bat"
+}
