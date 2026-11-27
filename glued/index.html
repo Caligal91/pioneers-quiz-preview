@@ -84,6 +84,7 @@ h2{margin:8px 0 6px;font-size:min(26px,5.4vw)}
 .msg{font-size:min(24px,5vw);font-weight:700;min-height:34px}
 .conf{position:fixed;top:-20px;font-size:28px;pointer-events:none;animation:fall linear forwards;z-index:9}
 @keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.pair .t{cursor:pointer}
 </style>
 </head>
 <body>
@@ -202,12 +203,14 @@ function tab(n){[1,2].forEach(i=>{$('t'+i).classList.toggle('on',i===n);$('p'+i)
 setup(1);
 /* ---------- Glue Lab ---------- */
 document.querySelectorAll('.pot').forEach(b=>b.onclick=async()=>{const p=$(b.dataset.g==='am'?'gm':'gn');if(!p.classList.contains('glued')){p.classList.add('glued');squish();await wait(500)}play(A+b.dataset.g+'.mp3')});
-['gm','gn'].forEach(id=>$(id).onclick=()=>{if($(id).classList.contains('glued'))play(A+(id==='gm'?'am':'an')+'.mp3')});
+function hear(n){if(player&&!paused&&started){player.pause();cancelAnimationFrame(raf);setPaused(true)}play(A+n+'.mp3')}
+document.querySelectorAll('.pair .t').forEach(t=>t.addEventListener('click',e=>{e.stopPropagation();const p=t.closest('.pair');hear(p.classList.contains('glued')?((p.id==='pm'||p.id==='gm')?'am':'an'):t.textContent.trim())}));
+document.querySelectorAll('.pair').forEach(p=>p.addEventListener('click',e=>{if(e.target.closest('.t'))return;e.stopPropagation();if(p.classList.contains('glued'))hear((p.id==='pm'||p.id==='gm')?'am':'an')}));
 const W=[['jam','am'],['ham','am'],['ram','am'],['can','an'],['fan','an'],['man','an'],['pan','an'],['van','an']].map(x=>({w:x[0],g:x[1]})).sort(()=>Math.random()-.5);
 let qi=0,score=0,locked=false;$('stars').innerHTML=W.map(()=>'<span>⭐</span>').join('');
 function q(){const x=W[qi];$('pimg').src='img/'+x.w+'.png';$('first').textContent=x.w[0];$('slot').textContent='?';$('slot').classList.remove('fill');$('msg').textContent='';locked=false}
 $('pic').onclick=()=>play(A+W[qi].w+'.mp3');
-document.querySelectorAll('.ch').forEach(b=>b.onclick=async()=>{if(locked)return;const x=W[qi];
+let busy=false;document.querySelectorAll('.ch').forEach(b=>b.onclick=async()=>{if(locked||busy)return;busy=true;const x=W[qi];await play(A+b.dataset.g+'.mp3');busy=false;if(locked)return;
  if(b.dataset.g===x.g){locked=true;$('slot').textContent=x.g;$('slot').classList.add('fill');squish();score++;$('stars').children[qi].classList.add('on');$('msg').textContent=`${x.w[0]} + ${x.g} = ${x.w}! ⭐`;await play(A+'yes.mp3');await play(A+x.w+'.mp3');await wait(700);
   qi++;if(qi<W.length)q();else{$('msg').textContent=`You glued all ${W.length} words! Super glue-master! 🎉`;confetti();[523,659,784,1047].forEach((f,k)=>setTimeout(()=>beep(f,.2),k*110))}}
  else{b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),450);beep(220,.18,'sawtooth',.05);$('msg').textContent='Good try! Say it out loud and listen again 👂';play(A+'try.mp3')}});
