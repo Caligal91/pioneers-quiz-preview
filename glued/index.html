@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Glued Sounds – Pioneers</title>
+<style>
+@font-face{font-family:Andika;src:url(../fonts/Andika-Regular.ttf)}
+@font-face{font-family:Andika;font-weight:700;src:url(../fonts/Andika-Bold.ttf)}
+:root{--o:#f47817;--t:#68ccd1;--ink:#222230;--ok:#3a9d3a;--v:#e8231f;--c:#1d4fd8;--glue:#7c4dff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Andika,"Segoe UI",sans-serif;color:var(--ink);background:#fff8f0;text-align:center;overflow-x:hidden}
+.wrap{max-width:980px;margin:0 auto;padding:10px 12px 16px}
+.tabs{display:flex;gap:10px;justify-content:center;margin:2px 0 8px}
+.tabs button{font:inherit;font-weight:700;font-size:min(18px,4vw);border:3px solid var(--ink);background:#fff;border-radius:999px;padding:6px 16px;cursor:pointer}
+.tabs button.on{background:var(--o);border-color:var(--o);color:#fff}
+.panel{display:none}.panel.on{display:block}
+/* intro stage */
+.stage{position:relative;height:min(430px,62vw);background:linear-gradient(#e8f8f9,#fff3e6);border-radius:26px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08);cursor:pointer}
+.mon{position:absolute;left:3%;bottom:17%;width:min(210px,30%);transition:transform .3s}
+.mon img{width:100%;display:block}
+.mon.talk img{animation:yap .28s infinite;transform-origin:50% 90%}
+.mon.pulse img{animation:pulse .9s ease}
+@keyframes yap{50%{transform:scale(1.04,.96)}}
+.zone{position:absolute;left:30%;right:2%;top:6%;bottom:22%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.row{display:flex;align-items:center;justify-content:center;gap:min(50px,6vw);position:relative}
+.t{width:min(96px,13vw);height:min(110px,15vw);border-radius:20px;background:#fff;box-shadow:0 5px 0 rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:min(76px,10vw);color:var(--c);transition:all .6s cubic-bezier(.3,1.4,.5,1);position:relative;z-index:1}
+.t.v{color:var(--v)}
+.t.pulse{animation:pulse .9s ease}
+@keyframes pulse{0%{transform:scale(1)}30%{transform:scale(1.28);box-shadow:0 0 0 8px rgba(255,200,40,.55),0 5px 0 rgba(0,0,0,.12)}100%{transform:scale(1)}}
+.pair{display:flex;gap:min(70px,8vw);transition:gap .7s cubic-bezier(.3,1.4,.5,1);position:relative;opacity:0;transform:scale(.6);margin-top:min(70px,9vw)}
+.pair.show{opacity:1;transform:scale(1);transition:all .5s cubic-bezier(.3,1.6,.5,1),gap .7s cubic-bezier(.3,1.4,.5,1)}
+.pair.glued{gap:0}
+.pair.glued .t{border-radius:0;background:#efe6ff}
+.pair.glued .t:first-child{border-radius:20px 0 0 20px}.pair.glued .t:last-child{border-radius:0 20px 20px 0}
+.pair.joined .t{transition-duration:.7s}
+/* glue pictures */
+.gb{position:absolute;left:50%;top:0;width:min(150px,21vw);transform:translate(-30%,-92%) rotate(-8deg) scale(.4);transform-origin:50% 100%;opacity:0;z-index:3;pointer-events:none;transition:all .6s cubic-bezier(.3,1.5,.5,1)}
+.pair.squirt .gb{opacity:1;transform:translate(-30%,-92%) rotate(0) scale(1)}
+.pair.glued .gb{opacity:0;transform:translate(-30%,-120%) rotate(8deg) scale(.7);transition:all .7s ease .25s}
+.gl{position:absolute;left:50%;bottom:-14%;width:min(120px,17vw);transform:translate(-50%,0) scale(.1);opacity:0;z-index:2;pointer-events:none;transition:all .8s cubic-bezier(.3,1.5,.5,1)}
+.pair.squirt .gl{opacity:1;transform:translate(-50%,0) scale(.55)}
+.pair.glued .gl{opacity:1;transform:translate(-50%,0) scale(1);transition:all .6s cubic-bezier(.3,1.6,.5,1)}
+.ex{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;opacity:0;transition:opacity .5s}
+.ex.show{opacity:1}
+.ex div{background:#fff;border-radius:16px;padding:4px 10px 6px;font-size:min(26px,4.6vw);font-weight:700;box-shadow:0 3px 8px rgba(0,0,0,.08)}
+.ex img{width:min(52px,8vw);display:block;margin:0 auto}
+.ex b{color:var(--glue)}
+.cap{position:absolute;left:3%;right:3%;bottom:4%;background:rgba(34,34,48,.85);color:#fff;border-radius:16px;padding:8px 14px;font-size:min(22px,4.2vw);font-weight:700;min-height:44px}
+.cap b{color:#ffc87a}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.35);z-index:5}
+.paused{position:absolute;right:12px;top:10px;background:rgba(34,34,48,.8);color:#fff;border-radius:999px;padding:5px 14px;font-weight:700;font-size:min(18px,4vw);display:none;z-index:4}
+.stage.isPaused .paused{display:block}
+.btn{font:inherit;font-weight:700;font-size:20px;border:0;border-radius:999px;padding:11px 26px;cursor:pointer;color:#fff;background:var(--o);box-shadow:0 4px 0 #c85d0b;margin:6px}
+.btn.alt{background:var(--t);box-shadow:0 4px 0 #3fa3a8}
+.btn.big{font-size:26px;padding:14px 34px}
+.btn.pause{background:#e8231f;box-shadow:0 4px 0 #a81512;min-width:150px}
+.btn.pause.isplay{background:var(--ok);box-shadow:0 4px 0 #26702a}
+.btn.sm{font-size:17px;padding:9px 18px}
+.dots{display:flex;gap:8px;justify-content:center;margin:8px 0 0}
+.dots i{width:12px;height:12px;border-radius:50%;background:#e2d8cc}
+.dots i.on{background:var(--o);transform:scale(1.25)}
+.dots i.done{background:#f7b27c}
+.ctl{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:4px}
+/* game */
+h2{margin:8px 0 6px;font-size:min(26px,5.4vw)}
+.glue-row{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin:6px 0 14px}
+.gwrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gwrap .pair{margin-top:min(40px,5vw)}
+.pot{font:inherit;font-size:17px;font-weight:700;border:0;border-radius:999px;background:var(--glue);color:#fff;padding:6px 18px 6px 10px;cursor:pointer;box-shadow:0 4px 0 #5a35c7;display:flex;align-items:center;gap:6px;margin-top:10px}
+.pot img{width:34px;height:34px;display:block}
+.build{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.pic{background:#fff;border-radius:24px;padding:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);cursor:pointer;border:0}
+.pic img{width:min(150px,30vw);display:block}
+.slot{width:min(170px,24vw);height:min(110px,15vw);border:4px dashed #cfc3ff;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:min(70px,10vw);color:var(--glue);background:#faf7ff}
+.slot.fill{border-style:solid;border-color:var(--glue);background:#efe6ff;animation:pp .5s cubic-bezier(.3,1.7,.5,1)}
+@keyframes pp{0%{transform:scale(.7)}100%{transform:scale(1)}}
+.choices{display:flex;gap:16px;justify-content:center;margin:14px 0 4px}
+.ch{font:inherit;font-weight:700;font-size:min(48px,9vw);width:min(140px,26vw);height:min(90px,16vw);border:0;border-radius:20px;background:#efe6ff;color:var(--glue);cursor:pointer;box-shadow:0 5px 0 #cbb8ff}
+.ch.shake{animation:sh .45s}
+@keyframes sh{20%{transform:translateX(-8px) rotate(-4deg)}60%{transform:translateX(8px) rotate(4deg)}}
+.stars{font-size:26px;letter-spacing:3px;margin:6px 0}.stars span{opacity:.18}.stars span.on{opacity:1}
+.msg{font-size:min(24px,5vw);font-weight:700;min-height:34px}
+.conf{position:fixed;top:-20px;font-size:28px;pointer-events:none;animation:fall linear forwards;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tabs"><button id="t1" class="on">🎬 Watch</button><button id="t2">🧪 Glue Lab</button></div>
+  <div class="panel on" id="p1">
+    <div class="stage" id="stage">
+      <div class="mon" id="mon"><img src="a-small.png" alt="little a"></div>
+      <div class="zone">
+        <div class="row">
+          <div class="pair" id="pm"><div class="t v">a</div><div class="t">m</div><img class="gl" src="img/glue-blob.png" alt=""><img class="gb" src="img/glue-bottle.png" alt=""></div>
+          <div class="pair" id="pn"><div class="t v">a</div><div class="t">n</div><img class="gl" src="img/glue-blob.png" alt=""><img class="gb" src="img/glue-bottle.png" alt=""></div>
+        </div>
+        <div class="ex" id="ex"></div>
+      </div>
+      <div class="cap" id="cap">Glued sounds with little a!</div>
+      <div class="paused">⏸ Paused</div>
+      <div class="play" id="playov"><button class="btn big" id="go">▶ Watch (sound on)</button></div>
+    </div>
+    <div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="ctl">
+      <button class="btn sm alt" id="back">⏮ Back</button>
+      <button class="btn pause" id="pause">⏸ Pause</button>
+      <button class="btn sm alt" id="next">Next ⏭</button>
+      <button class="btn sm alt" id="replay">🔁 From the start</button>
+      <button class="btn sm" id="tolab">🧪 Let's play! ➜</button>
+    </div>
+  </div>
+  <div class="panel" id="p2">
+    <h2>1. Tap the glue to stick the sounds together!</h2>
+    <div class="glue-row">
+      <div class="gwrap"><div class="pair show" id="gm"><div class="t v">a</div><div class="t">m</div><img class="gl" src="img/glue-blob.png" alt=""></div><button class="pot" data-g="am"><img src="img/glue-bottle.png" alt="">Glue!</button></div>
+      <div class="gwrap"><div class="pair show" id="gn"><div class="t v">a</div><div class="t">n</div><img class="gl" src="img/glue-blob.png" alt=""></div><button class="pot" data-g="an"><img src="img/glue-bottle.png" alt="">Glue!</button></div>
+    </div>
+    <h2>2. Which glued sound finishes the word?</h2>
+    <div class="stars" id="stars"></div>
+    <div class="build"><button class="pic" id="pic"><img id="pimg" alt=""><div style="font-size:14px;color:#777">🔊 tap to hear</div></button><div class="t" id="first">v</div><div class="slot" id="slot">?</div></div>
+    <div class="choices"><button class="ch" data-g="am">am</button><button class="ch" data-g="an">an</button></div>
+    <div class="msg" id="msg"></div>
+  </div>
+</div>
+<script>
+const $=id=>document.getElementById(id);const A='audio/';
+let cur=null;function play(src){return new Promise(r=>{if(cur&&cur!==player)cur.pause();cur=new Audio(src);cur.onended=cur.onerror=r;cur.play().catch(r)})}
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+let ac;function beep(f,d,type='triangle',v=.12){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(e){}}
+function squish(){beep(300,.12,'sine',.15);setTimeout(()=>beep(200,.15,'sine',.12),90)}
+function confetti(){const em=['🎉','⭐','🎊','✨','🌟'];for(let k=0;k<36;k++){const s=document.createElement('div');s.className='conf';s.textContent=em[k%em.length];s.style.left=Math.random()*100+'vw';s.style.animationDuration=(1.6+Math.random()*1.6)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),3600)}}
+function pulse(el){el.classList.remove('pulse');void el.offsetWidth;el.classList.add('pulse')}
+
+/* ---------- Watch: step player (audio drives the pictures, so Pause stops everything) ---------- */
+const CAP=[
+ "Hi! It's me, little <b>a</b>! Sometimes I like to stick to my friends… like <b>glue</b>!",
+ "Here is my friend <b>m</b>. When we meet, we use glue and make… <b>am</b>!",
+ "Here is my friend <b>n</b>. When we meet, we use glue and make… <b>an</b>!",
+ "These are <b>glued sounds</b>. They stick together, so we always say them together: <b>am</b>! <b>an</b>!",
+ "You can hear <b>am</b> in jam and ham, and <b>an</b> in can, fan and van!",
+ "Now it's your turn. Let's glue some sounds! 🧪"];
+let CUES={};fetch('cues.json').then(r=>r.json()).then(j=>CUES=j).catch(()=>{});
+let player=null,si=0,ci=0,raf=0,paused=false,started=false;
+const mon=$('mon'),stage=$('stage');
+function cl(id,...c){$(id).classList.remove('show','squirt','glued');c.forEach(x=>$(id).classList.add(x))}
+function setup(n){ // picture state at the START of step n
+ cl('pm');cl('pn');$('ex').classList.remove('show');mon.classList.remove('talk');
+ if(n>=3)cl('pm','show','glued');
+ if(n>=4)cl('pn','show','glued');
+ if(n>=5){$('ex').innerHTML=[['jam','am'],['ham','am'],['can','an'],['fan','an'],['van','an']].map(([w,g])=>`<div><img src="img/${w}.png" alt="">${w.replace(g,'<b>'+g+'</b>')}</div>`).join('');}
+ if(n>=6)$('ex').classList.add('show');
+ $('cap').innerHTML=CAP[n-1];
+ [...$('dots').children].forEach((d,i)=>{d.className=i===n-1?'on':(i<n-1?'done':'')});
+}
+function fire(n,ev){
+ const P=n===3?'pn':'pm';
+ if(ev==='pm.show')cl('pm','show');
+ else if(ev==='pn.show')cl('pn','show');
+ else if(ev==='glue.m'){cl('pm','show','squirt');squish()}
+ else if(ev==='glue.n'){cl('pn','show','squirt');squish()}
+ else if(ev==='pm.glued'){cl('pm','show','glued');squish()}
+ else if(ev==='pn.glued'){cl('pn','show','glued');squish()}
+ else if(ev==='ex.show')$('ex').classList.add('show');
+ else if(ev==='hl:a'){n===1?pulse(mon):pulse($(P).children[0])}
+ else if(ev==='hl:m')pulse($('pm').children[1]);
+ else if(ev==='hl:n')pulse($('pn').children[1]);
+ else if(ev==='hl:pm'){[...$('pm').querySelectorAll('.t')].forEach(pulse)}
+ else if(ev==='hl:pn'){[...$('pn').querySelectorAll('.t')].forEach(pulse)}
+}
+function tick(){
+ if(!player)return;
+ const c=(CUES[si]||{}).cues||[];
+ while(ci<c.length&&player.currentTime>=c[ci][0]){fire(si,c[ci][1]);ci++}
+ raf=requestAnimationFrame(tick);
+}
+function setPaused(p){paused=p;stage.classList.toggle('isPaused',p);$('pause').classList.toggle('isplay',p);$('pause').textContent=p?'▶ Play':'⏸ Pause';mon.classList.toggle('talk',!p&&started&&player&&!player.ended)}
+function go(n,auto=true){
+ n=Math.max(1,Math.min(6,n));cancelAnimationFrame(raf);if(player){player.onended=null;player.pause()}if(cur)cur.pause();
+ si=n;ci=0;started=true;$('playov').style.display='none';setup(n);
+ player=new Audio(A+'s'+n+'.mp3');
+ player.onended=()=>{mon.classList.remove('talk');cancelAnimationFrame(raf);if(si<6)go(si+1);else setPaused(true)};
+ if(auto){paused=false;setPaused(false);player.play().catch(()=>setPaused(true));raf=requestAnimationFrame(tick);if(n===1)fire(1,'talk')}
+}
+function toggle(){
+ if(!started){go(1);return}
+ if(!player)return;
+ if(si===6&&player.ended){go(1);return}
+ if(paused){player.play();setPaused(false);cancelAnimationFrame(raf);raf=requestAnimationFrame(tick)}
+ else{player.pause();setPaused(true);cancelAnimationFrame(raf)}
+}
+$('go').onclick=e=>{e.stopPropagation();go(1)};
+$('pause').onclick=toggle;
+stage.onclick=e=>{if(e.target.closest('button'))return;toggle()};
+$('back').onclick=()=>go(started?si-1:1);
+$('next').onclick=()=>go(started?si+1:1);
+$('replay').onclick=()=>go(1);
+$('t1').onclick=()=>tab(1);$('t2').onclick=()=>tab(2);$('tolab').onclick=()=>tab(2);
+function tab(n){[1,2].forEach(i=>{$('t'+i).classList.toggle('on',i===n);$('p'+i).classList.toggle('on',i===n)});if(n===2&&player&&!paused){player.pause();cancelAnimationFrame(raf);setPaused(true)}}
+setup(1);
+/* ---------- Glue Lab ---------- */
+document.querySelectorAll('.pot').forEach(b=>b.onclick=async()=>{const p=$(b.dataset.g==='am'?'gm':'gn');if(!p.classList.contains('glued')){p.classList.add('glued');squish();await wait(500)}play(A+b.dataset.g+'.mp3')});
+['gm','gn'].forEach(id=>$(id).onclick=()=>{if($(id).classList.contains('glued'))play(A+(id==='gm'?'am':'an')+'.mp3')});
+const W=[['jam','am'],['ham','am'],['ram','am'],['can','an'],['fan','an'],['man','an'],['pan','an'],['van','an']].map(x=>({w:x[0],g:x[1]})).sort(()=>Math.random()-.5);
+let qi=0,score=0,locked=false;$('stars').innerHTML=W.map(()=>'<span>⭐</span>').join('');
+function q(){const x=W[qi];$('pimg').src='img/'+x.w+'.png';$('first').textContent=x.w[0];$('slot').textContent='?';$('slot').classList.remove('fill');$('msg').textContent='';locked=false}
+$('pic').onclick=()=>play(A+W[qi].w+'.mp3');
+document.querySelectorAll('.ch').forEach(b=>b.onclick=async()=>{if(locked)return;const x=W[qi];
+ if(b.dataset.g===x.g){locked=true;$('slot').textContent=x.g;$('slot').classList.add('fill');squish();score++;$('stars').children[qi].classList.add('on');$('msg').textContent=`${x.w[0]} + ${x.g} = ${x.w}! ⭐`;await play(A+'yes.mp3');await play(A+x.w+'.mp3');await wait(700);
+  qi++;if(qi<W.length)q();else{$('msg').textContent=`You glued all ${W.length} words! Super glue-master! 🎉`;confetti();[523,659,784,1047].forEach((f,k)=>setTimeout(()=>beep(f,.2),k*110))}}
+ else{b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),450);beep(220,.18,'sawtooth',.05);$('msg').textContent='Good try! Say it out loud and listen again 👂';play(A+'try.mp3')}});
+q();
+</script>
+</body>
+</html>
