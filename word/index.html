@@ -115,9 +115,11 @@ function write(D,X){const app=$('app');
  app.innerHTML=`<div class="top"><span class="lab">✏️ WRITING PAD</span></div>
  <h2>Write <b style="color:var(--v)">${esc(X.word)}</b> three times, then ${D.target.split?`draw a loop from the bossy <b>e</b> back to the <b>${esc(D.target.letter)}</b>!`:`underline the ${D.target.noun==='letters'?'letters that make':'letter that makes'} the ${esc(D.target.name)} sound!`}</h2>
  ${X.hasWriteImg?`<img class="how" id="how" src="img/${X.word}-write.jpg" alt="How to write it" title="Tap to zoom">`:''}
- <div class="pens" id="pens">${['#222230','#1d4fd8','#e8231f','#3a9d3a','#7c4dff'].map((c,i)=>`<span class="pen ${i?'':'on'}" data-c="${c}" style="background:${c}"></span>`).join('')}</div>
+ <div style="text-align:center;margin:14px 0"><button class="btn" id="padbtn">✏️ Use the writing pad</button><div id="padnote" style="font-size:14px;color:#666;margin-top:6px">Writing in your book instead? Write it three times and show your tutor.</div></div>
+ <div id="padwrap" style="display:none"><div class="pens" id="pens">${['#222230','#1d4fd8','#e8231f','#3a9d3a','#7c4dff'].map((c,i)=>`<span class="pen ${i?'':'on'}" data-c="${c}" style="background:${c}"></span>`).join('')}</div>
  ${[1,2,3].map(n=>`<div class="line"><span class="n">${n}</span><canvas data-n="${n}"></canvas><div class="ctl"><button class="clr">🧽 Clear</button><button class="star">⭐ Done</button></div></div>`).join('')}
- <div class="done" id="done"></div>`;
+ <div class="done" id="done"></div></div>`;
+ $('padbtn').onclick=()=>{const w=$('padwrap'),open=w.style.display==='none';w.style.display=open?'block':'none';$('padbtn').textContent=open?'📖 Hide the writing pad':'✏️ Use the writing pad';$('padnote').style.display=open?'none':'block';if(open)setTimeout(()=>window.dispatchEvent(new Event('resize')),30)};
  if($('how'))$('how').onclick=()=>$('how').classList.toggle('big');
  let color='#222230';document.querySelectorAll('.pen').forEach(p=>p.onclick=()=>{document.querySelectorAll('.pen').forEach(q=>q.classList.remove('on'));p.classList.add('on');color=p.dataset.c});
  let stars=0;
