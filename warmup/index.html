@@ -54,7 +54,7 @@ h1{margin:4px 0;font-size:34px}
 const $=id=>document.getElementById(id);
 const P=new URLSearchParams(location.search);
 const S=(P.get('s')||'s,a,t,p,i,n,m,d').split(',').map(x=>x.trim()).filter(Boolean);
-const IDS={c:'c',k:'k',ck:'k',q:'k',qu:'k',x:'k',ph:'f',ff:'f',ss:'s',ll:'l',zz:'z',wh:'w',th:'th-thin',ee:'ee',ea:'ee',ai:'ay',ay:'ay',a_e:'ay',oa:'oa',o_e:'oa',ow:'oa',igh:'igh',i_e:'igh',oo:'oo-moon',ar:'ar',or:'or',ir:'er',ur:'er',er:'er'};
+const IDS={t:'t-warm',c:'c',k:'k',ck:'k',q:'k',qu:'k',x:'k',ph:'f',ff:'f',ss:'s',ll:'l',zz:'z',wh:'w',th:'th-thin',ee:'ee',ea:'ee',ai:'ay',ay:'ay',a_e:'ay',oa:'oa',o_e:'oa',ow:'oa',igh:'igh',i_e:'igh',oo:'oo-moon',ar:'ar',or:'or',ir:'er',ur:'er',er:'er'};
 const CH='https://caligal91.github.io/pioneers-sound-chart/voice/snd-';const WORDS=S.some(x=>x.length>2&&!IDS[x]);const UNIT=WORDS?'word':'sound';if(WORDS)$('sub').textContent='Read each word as fast as you can. Ready?';
 let i=0,t0=0,tick=null,order=[];
 S.forEach(()=>{const s=document.createElement('span');s.className='star';s.textContent='⭐';$('stars').appendChild(s)});
