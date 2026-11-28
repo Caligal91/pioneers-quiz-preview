@@ -128,7 +128,7 @@ h2{margin:8px 0 6px;font-size:min(26px,5.4vw)}
 </div>
 <script>
 const $=id=>document.getElementById(id);const A='audio/';
-let cur=null;function play(src){return new Promise(r=>{if(cur&&cur!==player)cur.pause();cur=new Audio(src);cur.onended=cur.onerror=r;cur.play().catch(r)})}
+let cur=null;function play(src){return new Promise(r=>{if(cur&&cur!==player)cur.pause();cur=new Audio(src+'?v=1128b');cur.onended=cur.onerror=r;cur.play().catch(r)})}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 let ac;function beep(f,d,type='triangle',v=.12){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(e){}}
 function squish(){beep(300,.12,'sine',.15);setTimeout(()=>beep(200,.15,'sine',.12),90)}
@@ -181,7 +181,7 @@ function setPaused(p){paused=p;stage.classList.toggle('isPaused',p);$('pause').c
 function go(n,auto=true){
  n=Math.max(1,Math.min(6,n));cancelAnimationFrame(raf);if(player){player.onended=null;player.pause()}if(cur)cur.pause();
  si=n;ci=0;started=true;$('playov').style.display='none';setup(n);
- player=new Audio(A+'s'+n+'.mp3');
+ player=new Audio(A+'s'+n+'.mp3?v=1128b');
  player.onended=()=>{mon.classList.remove('talk');cancelAnimationFrame(raf);if(si<6)go(si+1);else setPaused(true)};
  if(auto){paused=false;setPaused(false);player.play().catch(()=>setPaused(true));raf=requestAnimationFrame(tick);if(n===1)fire(1,'talk')}
 }
