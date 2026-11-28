@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sound Recap – Pioneers</title>
+<style>
+@font-face{font-family:Andika;src:url(../fonts/Andika-Regular.ttf)}
+@font-face{font-family:Andika;font-weight:700;src:url(../fonts/Andika-Bold.ttf)}
+:root{--o:#f47817;--t:#68ccd1;--ink:#222230;--ok:#3a9d3a;--v:#e8231f;--c:#1d4fd8;--p:#7c4dff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Andika,"Segoe UI",sans-serif;color:var(--ink);background:#fff8f0;text-align:center;overflow-x:hidden}
+.wrap{max-width:960px;margin:0 auto;padding:12px}
+.banner{background:linear-gradient(135deg,#ffc531,#f47817);border-radius:26px;padding:14px 20px;color:#fff;box-shadow:0 5px 0 #d95f00}
+.banner small{display:block;font-size:18px;font-weight:700;letter-spacing:1px}
+.banner h1{margin:2px 0 0;font-size:min(32px,6vw)}
+.recap{display:flex;align-items:center;justify-content:center;gap:16px;margin:14px 0 6px;flex-wrap:wrap}
+.big{width:min(130px,26vw);height:min(130px,26vw);border-radius:30px;border:0;background:#fff;box-shadow:0 6px 0 rgba(0,0,0,.12);font:inherit;font-weight:700;font-size:min(96px,19vw);color:var(--v);cursor:pointer;line-height:1}
+.big.pop{animation:pp .5s cubic-bezier(.3,1.7,.5,1)}
+@keyframes pp{0%{transform:scale(.8)}100%{transform:scale(1)}}
+.recap p{font-size:min(22px,4.6vw);max-width:420px;text-align:left;margin:0}
+.recap b{color:var(--v)}
+.qwrap{background:#fff;border-radius:24px;box-shadow:0 4px 14px rgba(0,0,0,.07);padding:12px 14px 16px;margin-top:10px}
+.prog{font-size:24px;letter-spacing:4px}.prog span{opacity:.2}.prog span.on{opacity:1}
+h2{margin:6px 0 10px;font-size:min(26px,5.2vw)}
+.opts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.opt{border:0;font:inherit;cursor:pointer;background:#f6f3ff;border-radius:20px;padding:10px 14px;min-width:min(120px,26vw);box-shadow:0 5px 0 #ddd4ff;transition:transform .15s}
+.opt:hover{transform:translateY(-3px)}
+.opt .L{font-size:min(64px,12vw);font-weight:700;line-height:1.1;color:var(--c)}
+.opt img{width:min(84px,18vw);display:block;margin:0 auto}
+.opt .w{font-size:22px;font-weight:700}
+.opt.ok{background:#e9f9ea;box-shadow:0 5px 0 #a8dfa8}
+.opt.no{animation:sh .45s}
+@keyframes sh{20%{transform:translateX(-8px) rotate(-4deg)}60%{transform:translateX(8px) rotate(4deg)}}
+.msg{font-size:min(22px,4.6vw);font-weight:700;min-height:32px;margin-top:10px}
+.badge{display:none;margin-top:10px}
+.badge.on{display:block;animation:pp .6s cubic-bezier(.3,1.7,.5,1)}
+.medal{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#fff3c4,#ffe08a);border:5px solid #f4b400;border-radius:999px;padding:8px 26px 8px 8px}
+.medal img{width:min(110px,22vw)}
+.medal div{font-size:min(30px,6vw);font-weight:700;color:#8a5a00;text-align:left}
+.medal small{display:block;font-size:16px;color:#7a6a40}
+.btn{font:inherit;font-weight:700;font-size:20px;border:0;border-radius:999px;padding:11px 26px;cursor:pointer;color:#fff;background:var(--o);box-shadow:0 4px 0 #c85d0b;margin:12px 6px 0}
+.conf{position:fixed;top:-20px;font-size:28px;pointer-events:none;animation:fall linear forwards;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner"><small>⭐ SOUND RECAP ⭐</small><h1 id="ttl">Today we learnt the short a sound!</h1></div>
+  <div class="recap"><button class="big" id="big">a</button><p id="rp">We spell the <b>short a</b> sound with the letter <b>a</b>, like in c<b>a</b>t. Tap me to hear it!</p></div>
+  <div class="qwrap">
+    <div class="prog" id="prog"></div>
+    <div id="q"></div>
+    <div class="msg" id="msg"></div>
+    <div class="badge" id="badge"><div class="medal"><img src="https://pioneers-training-quiz.vercel.app/letter/img/a-small.png" alt=""><div id="medal">Short a Star!<small>You know your short a sound!</small></div></div><br><button class="btn" id="next">Let's do some activities! ➜</button></div>
+  </div>
+</div>
+<script>
+const P=new URLSearchParams(location.search);const LID=P.get('l')||('short-'+(P.get('s')||'a'));
+const CH='https://caligal91.github.io/pioneers-sound-chart/';
+let IMAP={};fetch('../games/img/map.json').then(r=>r.json()).catch(()=>({})).then(m=>{IMAP=m;return fetch('../lessons/'+LID+'.json',{cache:'no-store'})}).then(r=>r.json()).then(J=>{
+const S=J.letter,BIG=J.big||S,SND='../vowels/'+(J.pure||('g-short-'+S+'.mp3'));let Q;
+if(LID==='short-a'){Q=[
+ {q:'Which letter makes the short a sound?',o:[{L:'e'},{L:'a',ok:1},{L:'o'}],good:'Yes! a makes the short a sound!',snd:SND},
+ {q:'Which picture has the short a sound?',o:[{img:CH+'img/dog.png',w:'dog',a:CH+'voice/w-dog.mp3'},{img:CH+'img/pig.png',w:'pig',a:CH+'voice/w-pig.mp3'},{img:CH+'img/cat.png',w:'cat',a:CH+'voice/w-cat.mp3',ok:1}],good:'Yes! c-a-t, cat!',snd:CH+'voice/w-cat.mp3'},
+ {q:'Which picture has the short a sound?',o:[{img:CH+'img/map.png',w:'map',a:CH+'voice/w-map.mp3',ok:1},{img:CH+'img/sun.png',w:'sun',a:CH+'voice/w-sun.mp3'},{img:CH+'img/fish.png',w:'fish',a:CH+'voice/w-fish.mp3'}],good:'Yes! m-a-p, map!',snd:CH+'voice/w-map.mp3'},
+ {q:'Which glued sound is in "van"?',o:[{L:'am',g:1},{L:'an',g:1,ok:1}],good:'Yes! v + an = van!',snd:'../glued/audio/van.mp3'}]}
+else{const GI=w=>'../games/img/'+(IMAP[w]||w+'.svg'),GA=w=>'../games/audio/w/'+w+'.mp3';const V='aeiou'.split('').filter(x=>x!==S);
+ const shortNo=Object.entries(J.hunt.no).filter(([w,r])=>r.startsWith('short')).map(([w])=>w);
+ const pick=(ok,k)=>{const d=shortNo.slice(k*2,k*2+2);const o=[...d.map(w=>({img:GI(w),w,a:GA(w)})),{img:GI(ok),w:ok,a:GA(ok),ok:1}];return o.sort(()=>Math.random()-.5)};
+ const y=J.hunt.yes,sp=w=>[...w].join('-');const c=J.contrast,pr=c.read[0];
+ Q=[{q:J.letterOpts?`Which spelling makes the ${J.sound} sound?`:`Which letter makes the ${J.sound} sound?`,o:(J.letterOpts?J.letterOpts.map(L=>({L,ok:L===BIG?1:0})):[{L:V[0]},{L:S,ok:1},{L:V[2]}]).sort(()=>Math.random()-.5),good:`Yes! ${BIG} makes the ${J.sound} sound!`,snd:SND},
+  {q:`Which picture has the ${J.sound} sound?`,o:pick(y[0],0),good:`Yes! ${sp(y[0])}, ${y[0]}!`,snd:GA(y[0])},
+  {q:`Which picture has the ${J.sound} sound?`,o:pick(y[1],1),good:`Yes! ${sp(y[1])}, ${y[1]}!`,snd:GA(y[1])},
+  {q:`Which word has the ${J.sound}?`,o:[{L:pr[0],g:1,a:GA(pr[0])},{L:pr[1],g:1,ok:1,a:GA(pr[1])}],good:`Yes! ${pr[1]} has the ${J.sound}!`,snd:GA(pr[1])}]}
+document.getElementById('big').textContent=BIG;if(BIG.length>1)document.getElementById('big').style.fontSize='min(52px,10vw)';document.getElementById('ttl').textContent=`Today we learnt the ${J.sound} sound!`;
+document.getElementById('rp').innerHTML=J.recapText?J.recapText:J.exampleHtml?`We spell the <b>${J.sound}</b> sound with <b>${BIG}</b>: a bossy e at the end, like in ${J.exampleHtml}. Tap me to hear it!`:`We spell the <b>${J.sound}</b> sound with the letter <b>${S}</b>, like in ${J.example.replace(S,'<b>'+S+'</b>')}. Tap me to hear it!`;
+document.getElementById('medal').innerHTML=`${J.sound[0].toUpperCase()+J.sound.slice(1)} Star!<small>You know your ${J.sound} sound!</small>`;
+const mi=document.querySelector('.medal img');mi.onerror=()=>{mi.src='https://pioneers-training-quiz.vercel.app/letter/img/a-small.png'};mi.src=`https://pioneers-training-quiz.vercel.app/letter/img/${J.mon||S}-small.png`;
+const $=id=>document.getElementById(id);
+let cur=null;function play(src){return new Promise(r=>{if(cur)cur.pause();cur=new Audio(src);cur.onended=cur.onerror=r;cur.play().catch(r)})}
+let ac;function beep(f,d,type='triangle',v=.12){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(e){}}
+function confetti(){const em=['🎉','⭐','🎊','✨','🌟'];for(let k=0;k<40;k++){const s=document.createElement('div');s.className='conf';s.textContent=em[k%em.length];s.style.left=Math.random()*100+'vw';s.style.animationDuration=(1.6+Math.random()*1.6)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),3600)}}
+$('big').onclick=()=>{const b=$('big');b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');play(SND)};
+$('prog').innerHTML=Q.map(()=>'<span>⭐</span>').join('');
+let i=0,lock=false;
+function show(){const x=Q[i];lock=false;$('msg').textContent='';
+ $('q').innerHTML=`<h2>${x.q}</h2><div class="opts">${x.o.map((o,k)=>`<button class="opt" data-k="${k}">${o.img?`<img src="${o.img}" alt=""><div class="w">${o.w}</div>`:`<div class="L" style="${o.g?'color:var(--p)':''}">${o.L}</div>`}</button>`).join('')}</div>`;
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=async()=>{if(lock)return;const o=x.o[+b.dataset.k];
+  if(o.ok){lock=true;b.classList.add('ok');$('prog').children[i].classList.add('on');$('msg').textContent=x.good+' ⭐';[660,880].forEach((f,k)=>setTimeout(()=>beep(f,.15),k*90));await play(x.snd);await new Promise(r=>setTimeout(r,700));i++;if(i<Q.length)show();else done()}
+  else{b.classList.add('no');setTimeout(()=>b.classList.remove('no'),450);if(o.a)play(o.a);$('msg').textContent=o.w?`Listen: ${o.w}. Does it have the ${J.sound} sound? Try again!`:'Good try! Have another go 👂'}})}
+function done(){$('q').innerHTML='';$('msg').textContent='';$('badge').classList.add('on');confetti();[523,659,784,1047].forEach((f,k)=>setTimeout(()=>beep(f,.2),k*110))}
+$('next').onclick=()=>{confetti();$('next').textContent='Great! Your tutor will open the activities 🎮'};
+show();
+
+});
+</script>
+</body>
+</html>
