@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sound Speed Run – Pioneers</title>
+<style>
+@font-face{font-family:Andika;src:url(../fonts/Andika-Regular.ttf)}
+@font-face{font-family:Andika;font-weight:700;src:url(../fonts/Andika-Bold.ttf)}
+:root{--o:#f47817;--t:#68ccd1;--ink:#222230;--ok:#3a9d3a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Andika,"Segoe UI",sans-serif;background:linear-gradient(#e8f8f9,#fff8f0);color:var(--ink);min-height:100vh;overflow-x:hidden}
+.wrap{max-width:900px;margin:0 auto;padding:14px;text-align:center}
+h1{margin:4px 0;font-size:34px}
+.sub{font-size:19px;color:#555;margin:0 0 10px}
+.track{position:relative;height:74px;background:#fff;border:3px solid var(--ink);border-radius:999px;margin:10px 0 14px;overflow:hidden}
+.track .stars{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;padding:0 70px 0 20px;font-size:28px}
+.star{opacity:.18;transition:opacity .2s,transform .3s}.star.on{opacity:1;transform:scale(1.25)}
+.rocket{position:absolute;top:50%;left:10px;font-size:46px;transform:translateY(-50%) rotate(45deg);transition:left .45s cubic-bezier(.3,1.4,.5,1)}
+.card{margin:0 auto;width:min(360px,80vw);aspect-ratio:1.15;background:#fff;border:6px solid var(--o);border-radius:34px;display:flex;align-items:center;justify-content:center;font-size:clamp(110px,22vw,190px);font-weight:700;color:#1d4fd8;box-shadow:0 8px 0 #d95f00;user-select:none}
+.card.pop{animation:pop .35s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(.5) rotate(-6deg);opacity:0}to{transform:scale(1);opacity:1}}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0 6px}
+.btn{font:inherit;font-weight:700;font-size:24px;border:0;border-radius:999px;padding:14px 30px;cursor:pointer;color:#fff;background:var(--ok);box-shadow:0 5px 0 #2a772a}
+.btn.alt{background:var(--t);box-shadow:0 5px 0 #3fa3a8;font-size:20px;padding:12px 22px}
+.btn.go{background:var(--o);box-shadow:0 5px 0 #c85d0b;font-size:30px;padding:16px 44px}
+.timer{font-size:22px;font-weight:700;color:#555}
+.tip{font-size:15px;color:#777;margin-top:12px}
+.end{font-size:30px;font-weight:700;margin:10px 0}
+.best{font-size:20px;color:var(--ok);font-weight:700}
+.conf{position:fixed;top:-20px;font-size:28px;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🚀 Sound Speed Run!</h1>
+  <p class="sub" id="sub">Say each sound as fast as you can. Ready?</p>
+  <div class="track"><div class="stars" id="stars"></div><div class="rocket" id="rocket">🚀</div></div>
+  <div id="play" style="display:none">
+    <div class="card" id="card">s</div>
+    <div class="btns"><button class="btn" id="got">✅ Got it!</button><button class="btn alt" id="hear">🔊 Say it together</button></div>
+    <div class="timer" id="timer">0.0 s</div>
+  </div>
+  <div id="start"><div class="btns"><button class="btn go" id="go">GO! 🏁</button></div></div>
+  <div id="done" style="display:none">
+    <div class="end" id="endmsg"></div><div class="best" id="best"></div>
+    <div class="btns"><button class="btn go" id="again">Beat your time! 🔁</button></div>
+  </div>
+  <p class="tip">Tutor: share your screen. Tap <b>Got it!</b> (or press the space bar) as soon as they say the sound. Missed one? Tap 🔊, say it together, and keep going. It's not a test.</p>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const P=new URLSearchParams(location.search);
+const S=(P.get('s')||'s,a,t,p,i,n,m,d').split(',').map(x=>x.trim()).filter(Boolean);
+const IDS={c:'c',k:'k',ck:'k',q:'k',qu:'k',x:'k',ph:'f',ff:'f',ss:'s',ll:'l',zz:'z',wh:'w',th:'th-thin',ee:'ee',ea:'ee',ai:'ay',ay:'ay',a_e:'ay',oa:'oa',o_e:'oa',ow:'oa',igh:'igh',i_e:'igh',oo:'oo-moon',ar:'ar',or:'or',ir:'er',ur:'er',er:'er'};
+const CH='https://caligal91.github.io/pioneers-sound-chart/voice/snd-';const WORDS=S.some(x=>x.length>2&&!IDS[x]);const UNIT=WORDS?'word':'sound';if(WORDS)$('sub').textContent='Read each word as fast as you can. Ready?';
+let i=0,t0=0,tick=null,order=[];
+S.forEach(()=>{const s=document.createElement('span');s.className='star';s.textContent='⭐';$('stars').appendChild(s)});
+let ac;function beep(f,d,type='triangle',v=.12){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(e){}}
+function confetti(){const em=['🎉','⭐','🎊','✨','🌟'];for(let k=0;k<40;k++){const s=document.createElement('div');s.className='conf';s.textContent=em[k%em.length];s.style.left=Math.random()*100+'vw';s.style.animationDuration=(1.6+Math.random()*1.6)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),3600)}}
+function show(){const c=$('card');c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop');c.textContent=order[i]}
+function move(){const n=S.length,w=$('stars').parentElement.clientWidth-80;$('rocket').style.left=(10+w*(i/n))+'px';[...$('stars').children].forEach((s,k)=>s.classList.toggle('on',k<i))}
+function start(){order=S.slice().sort(()=>Math.random()-.5);i=0;move();$('start').style.display='none';$('done').style.display='none';$('play').style.display='block';$('sub').textContent=WORDS?'Read the word!':'Say the sound!';show();t0=performance.now();clearInterval(tick);tick=setInterval(()=>$('timer').textContent=((performance.now()-t0)/1000).toFixed(1)+' s',100);beep(660,.15)}
+function got(){if($('play').style.display==='none')return;i++;beep(500+i*60,.12);move();if(i>=order.length)return finish();show()}
+function finish(){clearInterval(tick);const secs=(performance.now()-t0)/1000;$('play').style.display='none';$('done').style.display='block';$('sub').textContent='Amazing!';
+ $('endmsg').textContent=`You read all ${S.length} ${UNIT}s in ${secs.toFixed(1)} seconds! 🌟`;
+ const k='pio-warmup|'+S.join(',');const prev=parseFloat(sessionStorage.getItem(k)||'0');
+ if(prev&&secs<prev)$('best').textContent=`New record! That's ${(prev-secs).toFixed(1)} s faster than last time 🏆`;else if(prev)$('best').textContent=`Your best is ${prev.toFixed(1)} s. Want another go?`;else $('best').textContent='';
+ if(!prev||secs<prev)sessionStorage.setItem(k,secs.toFixed(1));
+ [523,659,784,1047].forEach((f,n)=>setTimeout(()=>beep(f,.25),n*110));confetti()}
+function hear(){const L=order[i];const id=IDS[L]||L;new Audio(WORDS?'../games/audio/w/'+L.toLowerCase()+'.mp3':CH+id+'.mp3').play().catch(()=>{})}
+$('go').onclick=start;$('again').onclick=start;$('got').onclick=got;$('hear').onclick=hear;
+document.addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();got()}});
+window.addEventListener('resize',move);
+</script>
+</body>
+</html>
